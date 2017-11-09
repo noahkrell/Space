@@ -1,0 +1,15 @@
+<h1>This is the Spaces results page</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+    <% @spaces.each do |space| %>
+    <div class="col-md-6"><p><%= link_to space.title, space_path(:id => space.id) %></p></div>
+    <% end %>
+    </div>
+  </div>
+  <div class="col-md-4" id="map-area">
+    <p> Save this area for map? </p>
+    <img src="https://developers.google.com/maps/documentation/android-api/images/zoom-level-14.png" alt="map">
+  </div>
+</div>
