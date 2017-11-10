@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   root "home#index"
 
   post '/spaces', to: 'spaces#index'
-  resources :spaces
+  resources :spaces, only: [:index, :show]
+
+  namespace :host do
+    resources :spaces, only: [:new, :create, :edit, :destroy]
+  end
 
 end
