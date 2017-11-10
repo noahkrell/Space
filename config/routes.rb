@@ -9,10 +9,14 @@ Rails.application.routes.draw do
   resources :users
 
   post '/spaces', to: 'spaces#index'
+  
   resources :spaces, only: [:index, :show]
 
   namespace :host do
     resources :spaces, only: [:new, :create, :edit, :destroy]
   end
 
+  post '/reviews', to: 'space_ratings#create'
+
+  resources :spaces
 end
