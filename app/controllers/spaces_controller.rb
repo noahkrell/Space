@@ -1,7 +1,7 @@
 class SpacesController < ApplicationController
 
   def index
-    if params[:search].empty?
+    if params[:search] == nil
       @spaces = Space.all
     else
       @spaces = Space.search_by_address(params[:search])
