@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20171109212136) do
     t.integer "price", null: false
     t.text "rules", null: false
     t.string "location", null: false
+    t.string "city", null: false
+    t.string "state"
+    t.string "country", null: false
     t.integer "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

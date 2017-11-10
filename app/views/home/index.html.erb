@@ -1,0 +1,8 @@
+<h1>space.</h1>
+
+<div class="input-group">
+  <%= form_tag(spaces_path, :method => "post", class: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Your vacation awaits...", class: "search-box"%>
+    <%= submit_tag "Search", :name => nil, style: "display:inline;" %>
+  <% end %>
+</div>
