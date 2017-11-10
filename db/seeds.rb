@@ -56,4 +56,4 @@ amenity_array = Amenity.all
                       amenity: amenity_array.sample)
 end
 
-Space.create(title: "DBC Office", description: "Heaven on earth", price: 100, rules: "no speaking", location: "1705 Guadalupe St, Austin, TX 78701", owner_id: 1)
+Space.create(title: "DBC Office", description: "Heaven on earth", price: 100, rules: "no speaking", location: "1705 Guadalupe St, Austin, TX 78701", city: "Austin", state: "TX", country: "USA", owner_id: 1)
