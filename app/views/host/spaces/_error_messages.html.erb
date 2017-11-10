@@ -1,0 +1,10 @@
+<% if @space.errors.any? %>
+  <div>
+      The form contains <%= pluralize(@space.errors.count, "error") %>.
+    <ul>
+    <% @space.errors.full_messages.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

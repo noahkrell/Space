@@ -4,6 +4,8 @@ class Space < ApplicationRecord
   has_many :amenities, through: :space_amenities
   has_many :space_ratings, through: :bookings
   belongs_to :owner, class_name: 'User'
+  
+  validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
 
 
   include PgSearch
