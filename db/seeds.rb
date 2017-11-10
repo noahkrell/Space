@@ -16,6 +16,9 @@ user_array = User.all
               price: Faker::Number.between(10, 100),
               rules: Faker::Lorem.sentence,
               location: Faker::Address.street_address,
+              city: Faker::Address.city,
+              state: Faker::Address.state_abbr,
+              country: Faker::Address.country,
               owner: user_array.sample)
 end
 space_array = Space.all
