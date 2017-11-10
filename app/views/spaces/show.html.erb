@@ -13,17 +13,17 @@
       <p>Rules: <%= @space.rules %></p>
 
 
-
-
-
     <div class="space-ratings">
-      <h3>Reviews</h3>
-      <% @space.bookings.each do |booking| %>
-        <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
-        <% renter = User.find_by(id: booking.renter_id) %>
-        <%= renter.first_name %><br>
-        <%= booking.end_time.strftime("%B %Y") %><br><br>
-        <%= space_rating.review %><br>
+      <% if @space.bookings.count > 0 %>
+        <% @space.bookings.each do |booking| %>
+          <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
+          <% renter = User.find_by(id: booking.renter_id) %>
+          <%= renter.first_name %> <%= space_rating.stars %><br>
+          <%= booking.end_time.strftime("%B %Y") %><br>
+          <%= space_rating.review %><br><br>
+        <% end %>
+      <% else %>
+        This space has no reviews.
       <% end %>
     </div>
 
