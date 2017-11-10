@@ -11,6 +11,23 @@
       <p>Description: <%= @space.description %></p>
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
+
+
+
+
+
+    <div class="space-ratings">
+      <h3>Reviews</h3>
+      <% @space.bookings.each do |booking| %>
+        <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
+        <% renter = User.find_by(id: booking.renter_id) %>
+        <%= renter.first_name %><br>
+        <%= booking.end_time.strftime("%B %Y") %><br><br>
+        <%= space_rating.review %><br>
+      <% end %>
+    </div>
+
+
     </div>
     <div class="col-md-6" id="map-area-show">
       <iframe
