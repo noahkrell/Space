@@ -14,6 +14,18 @@
 
 
     <div class="space-ratings">
+<!--       @bookings = Booking.find_by(space_id: @space.id)
+      booking_array = []
+      @bookings.each do |booking|
+        if booking.space_rating
+          booking_array << booking
+        end
+      end
+      <h3>booking_array.count Reviews</h3>
+
+      booking = SpaceRating.find_by(booking_id: booking.id)
+ -->
+
       <% if @space.bookings.count > 0 %>
         <% @space.bookings.each do |booking| %>
           <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
