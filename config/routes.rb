@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
 
   get  '/signup',    to: 'users#new'
   get    '/login',   to: 'sessions#new'
@@ -7,12 +8,15 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root "home#index"
-
   post '/spaces', to: 'spaces#index'
+  
+  resources :spaces, only: [:index, :show]
+
+  namespace :host do
+    resources :spaces, only: [:new, :create, :edit, :destroy]
+  end
 
   post '/reviews', to: 'space_ratings#create'
 
   resources :spaces
-
 end
