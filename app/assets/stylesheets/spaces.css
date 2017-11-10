@@ -1,19 +1,27 @@
-.col-md-6 {
-  border: 1px solid black;
-}
-
 #map-area {
-  background-color: grey;
-  padding-right: 5px;
+  padding-right: 50px;
   height: 800px;
+  padding-left: 1px;
 }
 
 #map-area-show {
-  background-color: grey;
   padding-right: 5px;
 }
 
 .space-img-bucket {
-  width: 100%;
+  width: 90%;
   text-align: center;
+}
+
+.results-map {
+  margin-left: 0;
+}
+
+.show-content {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.space-img-container {
+  background-color: black;
 }

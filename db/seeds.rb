@@ -55,3 +55,5 @@ amenity_array = Amenity.all
   SpaceAmenity.create!(space: space_array.sample,
                       amenity: amenity_array.sample)
 end
+
+Space.create(title: "DBC Office", description: "Heaven on earth", price: 100, rules: "no speaking", location: "1705 Guadalupe St, Austin, TX 78701", owner_id: 1)

@@ -9,7 +9,13 @@
     </div>
   </div>
   <div class="col-md-4" id="map-area">
-    <p> Save this area for map? </p>
-    <img src="https://developers.google.com/maps/documentation/android-api/images/zoom-level-14.png" alt="map">
+    <iframe class="results-map"
+      width="100%"
+      height="450"
+      frameborder="0" style="border:0"
+
+      <%# add search params into query params in src URL below %>
+      src="https://www.google.com/maps/embed/v1/search?key=<%=$map_key%>&q=record+stores+in+Seattle" allowfullscreen>
+    </iframe>
   </div>
 </div>
