@@ -19,7 +19,7 @@
         frameborder="0" style="border:0"
 
         <%# add space address into query params in src URL below %>
-        src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=Eiffel+Tower,Paris+France"allowfullscreen>
+        src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
       </iframe>
     </div>
   </div>
