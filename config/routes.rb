@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  post '/spaces', to: 'spaces#index'
   resources :spaces
 
 end
