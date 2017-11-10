@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
 
   get  '/signup',    to: 'users#new'
   get    '/login',   to: 'sessions#new'
@@ -6,8 +7,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
-
-  root "home#index"
 
   post '/spaces', to: 'spaces#index'
   resources :spaces, only: [:index, :show]
