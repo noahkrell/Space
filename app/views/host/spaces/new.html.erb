@@ -1,10 +1,8 @@
+<div class="main-content container">
 
-<% provide(:button_text, 'Post your space') %>
-<h1>Post your space</h1>
+	<% provide(:button_text, 'Post your space') %>
+	<h1>Post your space</h1>
 
-<%= render "form" %>
+	<%= render "form" %>
+</div>
 
-<% if @space == current_user %>
-  <p>Remove your space? <%= link_to "Delete", [:host, @space], method: :delete,
-                                data: { confirm: "Are you sure?" } %></p>
-<% end %>

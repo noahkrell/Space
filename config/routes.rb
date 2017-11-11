@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :spaces, only: [:index, :show]
 
   namespace :host do
-    resources :spaces, only: [:new, :create, :edit, :destroy]
+    resources :spaces, only: [:new, :create, :edit, :update, :destroy]
   end
 
   post '/reviews', to: 'space_ratings#create'
