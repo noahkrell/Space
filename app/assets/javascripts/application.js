@@ -16,5 +16,6 @@
 //= require scrollreveal/scrollreveal
 //= require magnific-popup/jquery.magnific-popup
 //= require rails-ujs
+//= require jquery-date/jquery-date
 //= require_tree .
 

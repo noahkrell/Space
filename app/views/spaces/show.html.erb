@@ -1,7 +1,15 @@
 <div class="main-content container">
   <div class="row space-img-container">
-    <div class="col-md-12" class="space-img-bucket">
-      <img src="http://www.esadesign.com/wp-content/uploads/2015/08/ESA-Office-Header.jpg" alt="space image">
+    <div class="col-md-6 space-img-bucket">
+      <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image">
+    </div>
+    <div class="col-md-6" id="show-map-container">
+      <iframe id="map-show"
+        width="100%"
+        height="100%"
+        frameborder="0" style="border:0;"
+        src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
+      </iframe>
     </div>
   </div>
 
@@ -46,3 +54,25 @@
     </div>
   </div>
 </div>  
+
+<!-- <h1 style="margin:150px auto 30px auto;">Day Schedule Selector jQuery Plugin Demo</h1>
+  <div id="day-schedule"></div>
+  <script>
+    (function ($) {
+      $("#day-schedule").dayScheduleSelector({
+        /*
+        days: [1, 2, 3, 5, 6],
+        interval: 15,
+        startTime: '09:50',
+        endTime: '21:06'
+        */
+      });
+      $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
+        console.log(selected);
+      })
+      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
+        '0': [['09:30', '11:00'], ['13:00', '16:30']]
+      });
+    })($);
+  </script>
+ -->

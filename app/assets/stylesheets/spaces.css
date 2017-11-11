@@ -11,6 +11,7 @@
 .space-img-bucket {
   width: 90%;
   text-align: center;
+  padding-left: 0px;
 }
 
 .results-map {
@@ -24,4 +25,15 @@
 
 .space-img-container {
   background-color: black;
+}
+
+#map-show {
+  padding-top: 0px;
+  padding-right: 0px;
+}
+
+#show-map-container {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
 }
