@@ -33,42 +33,17 @@
             <% end %>
           <% else %>
             This space has no reviews.
-  <!--       @bookings = Booking.find_by(space_id: @space.id)
-        booking_array = []
-        @bookings.each do |booking|
-          if booking.space_rating
-            booking_array << booking
-          end
-        end
-        <h3>booking_array.count Reviews</h3>
-
-        booking = SpaceRating.find_by(booking_id: booking.id)
-   -->
           <% end %>
         </div>
+      </div>
+      <div class="col-md-6" id="day-schedule">
+  
       </div>
     </div>
   </div>
 </div>  
 
-<!-- <h1 style="margin:150px auto 30px auto;">Day Schedule Selector jQuery Plugin Demo</h1>
-  <div id="day-schedule"></div>
-  <script>
-    (function ($) {
-      $("#day-schedule").dayScheduleSelector({
-        /*
-        days: [1, 2, 3, 5, 6],
-        interval: 15,
-        startTime: '09:50',
-        endTime: '21:06'
-        */
-      });
-      $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
-        console.log(selected);
-      })
-      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-        '0': [['09:30', '11:00'], ['13:00', '16:30']]
-      });
-    })($);
-  </script>
- -->
+
+
+
+
