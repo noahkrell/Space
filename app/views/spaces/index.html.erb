@@ -1,21 +1,23 @@
-<h1>This is the Spaces results page</h1>
+<div class="main-content container">
+  <h1>This is the Spaces results page</h1>
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="row">
-    <% @spaces.each do |space| %>
-    <div class="col-md-6"><p><%= link_to space.title, space_path(:id => space.id) %></p></div>
-    <% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+      <% @spaces.each do |space| %>
+      <div class="col-md-6"><p><%= link_to space.title, space_path(:id => space.id) %></p></div>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-md-4" id="map-area">
+      <iframe class="results-map"
+        width="100%"
+        height="450"
+        frameborder="0" style="border:0"
+
+        <%# add search params into query params in src URL below %>
+        src="https://www.google.com/maps/embed/v1/search?key=<%=$map_key%>&q=record+stores+in+Seattle" allowfullscreen>
+      </iframe>
     </div>
   </div>
-  <div class="col-md-4" id="map-area">
-    <iframe class="results-map"
-      width="100%"
-      height="450"
-      frameborder="0" style="border:0"
-
-      <%# add search params into query params in src URL below %>
-      src="https://www.google.com/maps/embed/v1/search?key=<%=$map_key%>&q=record+stores+in+Seattle" allowfullscreen>
-    </iframe>
-  </div>
-</div>
+<div class="main-content container">

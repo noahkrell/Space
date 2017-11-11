@@ -1,34 +1,41 @@
-<%= form_for [:host, @space] do |f| %>
-  <%= render 'error_messages' %>
-  <div>
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :description, "Description" %>
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.label :price, "Price $" %>
-    <%= f.number_field :price, min: 0, max: 1000%>
-  </div>
-  <div>
-    <%= f.label :rules, "Rules" %>
-    <%= f.text_area :rules %>
-  </div>
-  <div>
-    <%= f.label :location, "Location" %>
-    <%= f.text_field :location %>
-  </div>
-  <div>
-    <%= f.label :city, "City" %>
-    <%= f.text_field :city %>
-  </div>
-  <div>
-    <%= f.label :state, "State" %>
-    <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>  
-  </div>
-  <div>
-    <%= f.submit yield(:button_text) %>
-  </div>
-<% end %>
+<div class="col-md-3 text-center text-md-left mb-5">
+  <%= form_for [:host, @space] do |f| %>
+    <%= render 'error_messages' %>
+    <div class="form-row">
+      <div class="form-group col-md-6" >
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title, :class => "form-control" %>
+      </div>
+      <div class="form-group col-md-6" >
+        <%= f.label :price, "Price $" %>
+        <%= f.number_field :price, min: 0, max: 1000, :id => "price", :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :location, "Address" %>
+      <%= f.text_field :location, :id => "location", :class => "form-control" %>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :city, "City" %>
+        <%= f.text_field :city, :id => "city", :class => "form-control" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.label :state, "State" %>
+        <%= f.select :state, options_for_select(us_states),{}, :id => "state", :class => "form-control" %>
+      </div>
+    </div>
+    <div>
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description, :id => "description", :class => "form-control"  %>
+    </div>
+    <div>
+      <%= f.label :rules, "Rules" %>
+      <%= f.text_area :rules, :id => "rules", :class => "form-control" %>
+    </div>
+    <div>
+      <%= f.submit yield(:button_text), :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
