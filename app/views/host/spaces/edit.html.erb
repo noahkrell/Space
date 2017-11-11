@@ -1,4 +1,10 @@
-<% provide(:button_text, 'Post your space') %>
-<h1>Edit your space</h1>
+<div class="main-content container">
+	<% provide(:button_text, 'Edit your space') %>
+	<h1>Edit your space</h1>
 
-<%= render "form" %>
+	<%= render "form" %>
+  <% if @space.owner == current_user %>
+    <p>Remove your space? <%= link_to "Delete", [:host, @space], method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+  <% end %>
+</div>

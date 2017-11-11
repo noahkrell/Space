@@ -21,21 +21,23 @@ class Host::SpacesController < ApplicationController
     @space = Space.find(params[:space])
   end
 
-  # def update
-  #   @space = space.find(params[:space])
-  #   if @space.update_attributes(space_params)
-  #     flash[:success] = "Your changes have been updated!"
-  #     redirect_to @space
-  #   else
-  #     render 'edit'
-  #   end
-  # end
+  def update
+    p params
+    @space = Space.find(params[:id])
+    if @space.update_attributes(space_params)
+      flash[:success] = "Your changes have been updated!"
+      redirect_to @space
+    else
+      render 'edit'
+    end
+  end
 
-  # def destroy
-  #   space.find(params[:id]).destroy
-  #   flash[:success] = "space deleted"
-  #   redirect_to users_url
-  # end
+  def destroy
+    @user = current_user
+    Space.find(params[:id]).destroy
+    flash[:success] = "space deleted"
+    redirect_to @user
+  end
 
   private
 
