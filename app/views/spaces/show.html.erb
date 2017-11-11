@@ -13,7 +13,6 @@
     </div>
   </div>
 
-</div>
 <div class="show-content">
   <div class="row">
     <div class="col-md-6">
@@ -33,27 +32,16 @@
           <% @space.space_ratings.each do |rating| %>
             <% booking = Booking.find_by(id: rating.booking_id) %>
             <% renter = User.find_by(id: booking.renter_id) %>
-            <%= renter.first_name %> <%= rating.stars %><br>
+            <%= renter.first_name %> <div class="star" data-score="<%= rating.score %>"></div>
             <%= booking.end_time.strftime("%B %Y") %><br>
-            <%= rating.review %><br><br>
+            <%= rating.comment %><br><br>
         <% end %>
       <% end %>
     </div>
-
-      </div>
-      <div class="col-md-6" id="map-area-show">
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0" style="border:0"
-
-          <%# add space address into query params in src URL below %>
-          src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
-        </iframe>
-      </div>
     </div>
-  </div>
-</div>  
+    </div>
+  </div> 
+</div>
 
 <!-- <h1 style="margin:150px auto 30px auto;">Day Schedule Selector jQuery Plugin Demo</h1>
   <div id="day-schedule"></div>
