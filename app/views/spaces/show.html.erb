@@ -14,28 +14,18 @@
 
 
     <div class="space-ratings">
-<!--       @bookings = Booking.find_by(space_id: @space.id)
-      booking_array = []
-      @bookings.each do |booking|
-        if booking.space_rating
-          booking_array << booking
-        end
-      end
-      <h3>booking_array.count Reviews</h3>
-
-      booking = SpaceRating.find_by(booking_id: booking.id)
- -->
-
-      <% if @space.bookings.count > 0 %>
-        <% @space.bookings.each do |booking| %>
-          <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
-          <% renter = User.find_by(id: booking.renter_id) %>
-          <%= renter.first_name %> <%= space_rating.stars %><br>
-          <%= booking.end_time.strftime("%B %Y") %><br>
-          <%= space_rating.review %><br><br>
-        <% end %>
-      <% else %>
+      <% if @space.space_ratings.count == 0 %>
+        <h3>Reviews</h3>
         This space has no reviews.
+      <% else %>
+        <h3><%= @space.space_ratings.count %> Reviews</h3>
+          <% @space.space_ratings.each do |rating| %>
+            <% booking = Booking.find_by(id: rating.booking_id) %>
+            <% renter = User.find_by(id: booking.renter_id) %>
+            <%= renter.first_name %> <%= rating.stars %><br>
+            <%= booking.end_time.strftime("%B %Y") %><br>
+            <%= rating.review %><br><br>
+        <% end %>
       <% end %>
     </div>
 
