@@ -22,7 +22,6 @@ class Host::SpacesController < ApplicationController
   end
 
   def update
-    p params
     @space = Space.find(params[:id])
     if @space.update_attributes(space_params)
       flash[:success] = "Your changes have been updated!"
@@ -35,7 +34,8 @@ class Host::SpacesController < ApplicationController
   def destroy
     @user = current_user
     Space.find(params[:id]).destroy
-    flash[:success] = "space deleted"
+    
+    flash[:success] = "Space deleted"
     redirect_to @user
   end
 

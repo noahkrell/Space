@@ -1,44 +1,45 @@
-<div class="row space-img-container">
-  <div class="col-md-12" class="space-img-bucket">
-    <img src="http://www.esadesign.com/wp-content/uploads/2015/08/ESA-Office-Header.jpg" alt="space image">
+<div class="main-content container">
+  <div class="row space-img-container">
+    <div class="col-md-12" class="space-img-bucket">
+      <img src="http://www.esadesign.com/wp-content/uploads/2015/08/ESA-Office-Header.jpg" alt="space image">
+    </div>
   </div>
-</div>
-<div class="show-content">
-  <div class="row">
-    <div class="col-md-6">
-      <h2> <%= @space.title %> </h2>
-      <p>Location: <%= @space.location %></p>
-      <p>Description: <%= @space.description %></p>
-      <p> Price: <%= @space.price %></p>
-      <p>Rules: <%= @space.rules %></p>
+  <div class="show-content">
+    <div class="row">
+      <div class="col-md-6">
+        <h2> <%= @space.title %> </h2>
+        <p>Location: <%= @space.location %></p>
+        <p>Description: <%= @space.description %></p>
+        <p> Price: <%= @space.price %></p>
+        <p>Rules: <%= @space.rules %></p>
 
 
-    <div class="space-ratings">
-      <% if @space.bookings.count > 0 %>
-        <% @space.bookings.each do |booking| %>
-          <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
-          <% renter = User.find_by(id: booking.renter_id) %>
-          <%= renter.first_name %> <%= space_rating.stars %><br>
-          <%= booking.end_time.strftime("%B %Y") %><br>
-          <%= space_rating.review %><br><br>
+      <div class="space-ratings">
+        <% if @space.bookings.count > 0 %>
+          <% @space.bookings.each do |booking| %>
+            <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
+            <% renter = User.find_by(id: booking.renter_id) %>
+            <%= renter.first_name %> <%= space_rating.stars %><br>
+            <%= booking.end_time.strftime("%B %Y") %><br>
+            <%= space_rating.review %><br><br>
+          <% end %>
+        <% else %>
+          This space has no reviews.
         <% end %>
-      <% else %>
-        This space has no reviews.
-      <% end %>
-    </div>
+      </div>
 
 
-    </div>
-    <div class="col-md-6" id="map-area-show">
-      <iframe
-        width="600"
-        height="450"
-        frameborder="0" style="border:0"
+      </div>
+      <div class="col-md-6" id="map-area-show">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
 
-        <%# add space address into query params in src URL below %>
-        src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
-      </iframe>
+          <%# add space address into query params in src URL below %>
+          src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
+        </iframe>
+      </div>
     </div>
   </div>
-</div>
-
+</div>  
