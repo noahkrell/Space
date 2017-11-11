@@ -5,6 +5,17 @@ class SpaceRatingsController < ApplicationController
   def new
   end
 
+  def update
+    @rating = SpaceRating.find(params[:id])
+    @comment = @rating.review
+    if @rating.update_attributes(stars: params[:stars])
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
+
   # def create
   #   @space = SpaceRating.find_by(:api_id => params[:review][:movie_id].to_i)
   #   review_hash = {}

@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   post '/reviews', to: 'space_ratings#create'
 
   resources :spaces
+
+  resources :space_ratings, only: :update
 end
