@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
   (function ($) {
 
     $("#day-schedule").dayScheduleSelector({  
@@ -21,7 +20,10 @@ $( document ).ready(function() {
         data: { booking: {day: day, date: weekday, start_time: start_time, end_time: end_time} },
         dataType: 'json'
       }).done(function(resp) {
-        alert(resp.alert);
+        var start = new Date(resp.booking.start_time)
+        var end = new Date(resp.booking.end_time)
+        $("#day-schedule").hide()
+        $("#booking-confirmation").show().append("Starts " + start + "<br>" + "Ends " + end);
       });
     })
 
@@ -32,8 +34,3 @@ $( document ).ready(function() {
   })($);
 
 });
-
-
-// var today = moment(new Date());
-//     var weekday = today.add(i, 'days').format('ddd');
-//     return weekday;
