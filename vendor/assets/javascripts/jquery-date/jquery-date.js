@@ -9,12 +9,20 @@
     this.$selectingStart = null;
   }
 
+  
+  function getWeekday(i) {
+    var today = moment(new Date());
+    var weekday = today.add(i, 'days').format('ddd');
+    return weekday;
+  }
+
+
   DayScheduleSelector.DEFAULTS = {
     days        : [0, 1, 2, 3, 4, 5, 6],  // Sun - Sat
     startTime   : '08:00',                // HH:mm format
     endTime     : '20:00',                // HH:mm format
     interval    : 30,                     // minutes
-    stringDays  : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    stringDays  : [getWeekday(0), getWeekday(1), getWeekday(2), getWeekday(3), getWeekday(4), getWeekday(5), getWeekday(6)],
     template    : '<div class="day-schedule-selector">'         +
                     '<table class="schedule-table">'            +
                       '<thead class="schedule-header"></thead>' +

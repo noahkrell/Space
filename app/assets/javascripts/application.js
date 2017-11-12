@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery/jquery
+//= require moment
 //= require bootstrap/js/bootstrap.bundle
 //= require jquery-easing/jquery.easing
 //= require scrollreveal/scrollreveal
