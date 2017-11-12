@@ -11,11 +11,17 @@ $( document ).ready(function() {
 
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       console.log(selected);
+
+      var day = $(".schedule-header th")[selected.data().day+1].innerHTML
+      var start_time = selected.data().time
+      var end_time = selected[selected.length-1].dataset.time
+      var today = moment(new Date());
+      var weekday = today.add(selected.data().day, 'days').format("MMM Do YYYY")
       // debugger
       $.ajax({
-        url: "/book",
+        url: window.location.pathname + "/book",
         type: "POST",
-        data: { data: "hello" }
+        data: { booking: {day: day, date: weekday, start_time: start_time, end_time: end_time} }
       });
     })
 
@@ -28,3 +34,6 @@ $( document ).ready(function() {
 });
 
 
+// var today = moment(new Date());
+//     var weekday = today.add(i, 'days').format('ddd');
+//     return weekday;

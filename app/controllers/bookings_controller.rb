@@ -7,8 +7,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # start_time = 
-    # end_time = 
+    start_time = params[:booking][:date] + " #{params[:booking][:start_time]}"
+    start_time_obj = Time.parse(start_time)
+    end_time = params[:booking][:date] + " #{params[:booking][:end_time]}"
+    end_time_obj = Time.parse(end_time)
+    Booking.create(space_id: params[:id].to_i, renter_id: current_user.id, start_time: start_time_obj, end_time: end_time_obj)
     binding.pry
   end
 
