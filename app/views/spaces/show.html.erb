@@ -23,6 +23,15 @@
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
 
+
+  <div class="col-md-6" id="day-schedule">
+
+      </div>
+      <div class="col-md-6" id="booking-confirmation">
+        <h1>Your booking</h1>
+      </div>
+
+
     <div class="space-ratings">
       <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
@@ -38,29 +47,35 @@
         <% end %>
       <% end %>
     </div>
+
+  <div class="new-review-form ">
+    <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
+
+    <p>
+      <%= form.hidden_field :space_id, :value => @space.id %>
+    </p>
+
+
+
+    <p>
+      <%= form.label "Your Review:" %><div class="user_star" data-score=""></div>
+      <%= form.text_area :comment %>
+    </p>
+    <p>
+      <%= form.submit 'Submit Review' %>
+    </p>
+    <% end %>
+  </div>
+
+
+
+
     </div>
     </div>
-  </div> 
+  </div>
 </div>
 
-<!-- <h1 style="margin:150px auto 30px auto;">Day Schedule Selector jQuery Plugin Demo</h1>
-  <div id="day-schedule"></div>
-  <script>
-    (function ($) {
-      $("#day-schedule").dayScheduleSelector({
-        /*
-        days: [1, 2, 3, 5, 6],
-        interval: 15,
-        startTime: '09:50',
-        endTime: '21:06'
-        */
-      });
-      $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
-        console.log(selected);
-      })
-      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-        '0': [['09:30', '11:00'], ['13:00', '16:30']]
-      });
-    })($);
-  </script>
- -->
+
+
+
+

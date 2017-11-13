@@ -14,6 +14,10 @@ class Space < ApplicationRecord
   validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
   validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
+  geocoded_by :location   # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
+
+
 
   include PgSearch
 

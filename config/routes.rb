@@ -8,17 +8,18 @@ Rails.application.routes.draw do
 
   resources :users
 
-  post '/spaces', to: 'spaces#index'
-  
+
+
   resources :spaces, only: [:index, :show]
 
   namespace :host do
     resources :spaces, only: [:new, :create, :edit, :update, :destroy]
   end
+  post '/spaces/:id/review', to: 'space_ratings#create'
+  post '/spaces', to: 'spaces#index'
+  post 'spaces/:id/book', to: "bookings#create"
 
-  post '/reviews', to: 'space_ratings#create'
-
-  resources :spaces
+  # resources :spaces
 
   resources :space_ratings, only: :update
 end

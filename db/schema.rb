@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20171113033741) do
     t.integer "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.string "space_image_file_name"
     t.string "space_image_content_type"
     t.integer "space_image_file_size"

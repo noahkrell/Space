@@ -37,3 +37,34 @@
   padding-left: 0px;
   padding-top: 0px;
 }
+
+.schedule-rows td {
+  width: 80px;
+  height: 30px;
+  margin: 3px;
+  padding: 5px;
+  background-color: #3498DB;
+  cursor: pointer;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.schedule-header th {
+  text-align: center;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.schedule-rows td:first-child {
+  background-color: transparent;
+  text-align: right;
+  position: relative;
+  top: -12px;
+}
+.time-slot {
+  border: 2px solid black;
+}
+
+
+.schedule-rows td[data-selected],
+.schedule-rows td[data-selecting] { background-color: #BD6342; }
+
+.schedule-rows td[data-disabled] { opacity: 0.55; }

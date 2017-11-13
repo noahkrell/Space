@@ -4,7 +4,7 @@
               password: "password",
               password_confirmation: "password",
               email: Faker::Internet.email,
-              host: [true, false].sample,
+              host: true,
               birthday: Faker::Date.birthday(18, 100),
               phone_number: Faker::PhoneNumber.phone_number)
 end
@@ -57,3 +57,9 @@ amenity_array = Amenity.all
 end
 
 Space.create(title: "DBC Office", description: "Heaven on earth", price: 100, rules: "no speaking", location: "1705 Guadalupe St, Austin, TX 78701", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+Space.create(title: "Noah's House", description: "Pretty neat spot", price: 100, rules: "no speaking", location: "2207 South 3rd St., Austin, TX", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+Space.create(title: "Noah's old house", description: "childhood home", price: 100, rules: "no speaking", location: "4036 Enclave Mesa Circle, Austin, TX", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+Space.create(title: "Alamo Drafthouse", description: "baaa ba ba ba ba ba", price: 100, rules: "actually no speaking", location: "1120 S Lamar Blvd, Austin, TX 78704", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+Space.create(title: "Bob Bullock Museum", description: "A museum yay", price: 100, rules: "no speaking", location: "1800 Congress Ave, Austin, TX 78701", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+Space.create(title: "Torchy's Tacos", description: "Good eats", price: 100, rules: "no speaking", location: "3005 S Lamar Blvd, Austin, TX", city: "Austin", state: "TX", country: "USA", owner_id: 1)
+

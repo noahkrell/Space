@@ -20,7 +20,7 @@
       <h2> My bookings: </h2>
         <ul>
           <% @user.bookings.each do | booking | %>
-            <li> <%= link_to booking.space.title, booking %></li>
+            <li> <%= link_to booking.space.title, booking.space %></li>
           <% end %>
         </ul>
     <% end %>
