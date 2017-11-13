@@ -1,7 +1,8 @@
 <div class="main-content container">
   <div class="row space-img-container">
     <div class="col-md-6 space-img-bucket">
-      <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image">
+      <!-- <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image"> -->
+            <%= image_tag @space.space_image.url(:large), :class=>"show-banner-img" %>
     </div>
     <div class="col-md-6" id="show-map-container">
       <iframe id="map-show"
@@ -22,12 +23,14 @@
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
 
+
   <div class="col-md-6" id="day-schedule">
 
       </div>
       <div class="col-md-6" id="booking-confirmation">
         <h1>Your booking</h1>
       </div>
+
 
     <div class="space-ratings">
       <% if @space.space_ratings.count == 0 %>
@@ -51,7 +54,6 @@
     <p>
       <%= form.hidden_field :space_id, :value => @space.id %>
     </p>
-
 
     <p>
       <%= form.label "Your Review:" %><div class="user_star" data-score=""></div>
