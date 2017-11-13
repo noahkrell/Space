@@ -38,8 +38,7 @@ gem 'faker'
 gem 'pg_search'
 gem 'momentjs-rails'
 gem 'geocoder'
-gem "paperclip", "~> 4.2"
-gem 'aws-sdk', '< 2.0'
+
 # gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 group :development, :test do
@@ -48,7 +47,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-
+  gem "paperclip", "~> 4.2"
+  gem 'aws-sdk', '< 2.0'
 end
 
 group :development do
