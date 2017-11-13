@@ -42,19 +42,11 @@
 
   <div class="new-review-form ">
     <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
-
-    <p>
       <%= form.hidden_field :space_id, :value => @space.id %>
-    </p>
-
-
-    <p>
+      <%= form.hidden_field :renter_id, :value => current_user.id %>
       <%= form.label "Your Review:" %><div class="user_star" data-score=""></div>
       <%= form.text_area :comment %>
-    </p>
-    <p>
       <%= form.submit 'Submit Review' %>
-    </p>
     <% end %>
   </div>
 </div>
