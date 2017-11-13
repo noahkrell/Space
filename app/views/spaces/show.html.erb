@@ -38,9 +38,25 @@
         <% end %>
       <% end %>
     </div>
+
+  <div class="new-review-form ">
+    <%= form_with scope: :space_ratings, url: reviews_path, local: true do |form| %>
+
+    <p>
+      <%= form.label "Your Review:" %><br>
+      <%= form.text_area :comment %>
+    </p>
+    <p>
+      <%= form.submit 'Submit Review' %>
+    </p>
+    <% end %>
+  </div>
+
+
+
     </div>
     </div>
-  </div> 
+  </div>
 </div>
 
 <!-- <h1 style="margin:150px auto 30px auto;">Day Schedule Selector jQuery Plugin Demo</h1>
