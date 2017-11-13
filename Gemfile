@@ -38,6 +38,7 @@ gem 'faker'
 gem 'pg_search'
 gem 'momentjs-rails'
 gem 'geocoder'
+gem "paperclip", "~> 4.2"
 
 # gem 'bootstrap', '~> 4.0.0.beta2.1'
 
