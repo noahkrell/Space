@@ -1,8 +1,8 @@
   <head>
     <style>
        #map {
-        height: 400px;
-        width: 100%;
+        height: 500px;
+        width: 150%;
        }
     </style>
   </head>
@@ -21,7 +21,7 @@
         <%@map_markers.each do |marker|%>
           addMarker({
             coords: {lat: <%=marker.latitude%>, lng: <%=marker.longitude%>},
-            content: "<h1><%=marker.title%></h1><br><p><%=marker.description%></p>"
+            content: "<h3><%=marker.title%></h3><br><p><%=marker.description%></p>"
           });
         <%end%>
 
