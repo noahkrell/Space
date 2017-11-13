@@ -10,7 +10,6 @@ class Space < ApplicationRecord
 	medium: '300x300>',
   large: '600x600>'
 	}
-  
   validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
   validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
@@ -22,4 +21,11 @@ class Space < ApplicationRecord
   include PgSearch
 
   pg_search_scope :search_by_address, :against => [:city, :state, :country]
+
+  def average_rating
+    bottom = self.space_ratings.size.to_f
+    top = self.space_ratings.sum(:score).to_f
+    average = top/bottom
+    return average
+  end
 end

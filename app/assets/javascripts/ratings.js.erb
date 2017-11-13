@@ -2,11 +2,23 @@ $(document).ready(function() {
 
   $('.star').raty({
     readOnly: true,
+    half: true,
+    halfShow: true,
     score: $(this).data('score'),
     path: '/assets'
   });
 
+  $('.average-star').raty({
+  readOnly: true,
+  half: true,
+  halfShow: true,
+  score: $(this).data('score'),
+  path: '/assets'
+});
+
   $('.user_star').raty({
+  half: true,
+  halfShow: true,
   score: $(this).data('score'),
   path: '/assets',
   click: function(score, evt) {

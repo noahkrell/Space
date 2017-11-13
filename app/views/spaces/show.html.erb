@@ -23,21 +23,13 @@
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
 
-
-  <div class="col-md-6" id="day-schedule">
-
-      </div>
-      <div class="col-md-6" id="booking-confirmation">
-        <h1>Your booking</h1>
-      </div>
-
-
     <div class="space-ratings">
       <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
         This space has no reviews.
       <% else %>
-        <h3><%= @space.space_ratings.count %> Reviews</h3>
+        <h3><%= @space.space_ratings.count %> Reviews |
+          <div class="average-star" data-score="<%= @space.average_rating %>" style="display: inline"></div></h3>
           <% @space.space_ratings.each do |rating| %>
             <% booking = Booking.find_by(id: rating.booking_id) %>
             <% renter = User.find_by(id: booking.renter_id) %>
@@ -64,12 +56,15 @@
     </p>
     <% end %>
   </div>
+</div>
 
+    <div class="col-md-6">
+      <h1 style="text-align: center">Availability</h1>
+      <div id="day-schedule">
 
-
-
+      </div>
     </div>
-    </div>
+
   </div>
 </div>
 
