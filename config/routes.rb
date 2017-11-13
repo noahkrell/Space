@@ -19,7 +19,5 @@ Rails.application.routes.draw do
 
   post 'spaces/:id/book', to: "bookings#create"
 
-  resources :spaces
-
   resources :space_ratings, only: :update
 end
