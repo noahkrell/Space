@@ -21,10 +21,8 @@ class SpaceRatingsController < ApplicationController
     space_rating_hash = {}
     space_rating_hash[:comment] = space_rating_params[:comment]
     space_rating_hash[:score] = params[:score].to_i if params[:score].to_i > 0
-    space_rating_hash[:booking_id] = 1
-
+    # space_rating_hash[:booking_id] = params[:booking_id].to_i
     @review = SpaceRating.new(space_rating_hash)
-    binding.pry
     if @review.save
       redirect_to "/spaces/#{@space.id}"
     else
@@ -36,6 +34,6 @@ class SpaceRatingsController < ApplicationController
 
   private
   def space_rating_params
-    params.require(:space_ratings).permit(:comment, :score)
+    params.require(:space_ratings).permit(:comment, :score, :booking_id)
   end
 end
