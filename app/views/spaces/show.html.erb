@@ -21,7 +21,7 @@
       <p>Description: <%= @space.description %></p>
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
-
+      <%= image_tag @space.space_image(:large) %>
 
     <div class="space-ratings">
       <% if @space.space_ratings.count == 0 %>

@@ -4,8 +4,15 @@ class Space < ApplicationRecord
   has_many :amenities, through: :space_amenities
   has_many :space_ratings, through: :bookings
   belongs_to :owner, class_name: 'User'
+	has_attached_file :space_image, styles: {
+	thumb: '100x100>',
+	square: '200x200#',
+	medium: '300x300>',
+  large: '600x600>'
+	}
   
   validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
+  validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
 
   include PgSearch
