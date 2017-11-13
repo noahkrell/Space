@@ -15,7 +15,6 @@ class SpaceRatingsController < ApplicationController
     end
   end
 
-
   def create
     @space = Space.find(params[:space_ratings][:space_id].to_i)
     space_rating_hash = {}

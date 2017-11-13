@@ -18,19 +18,6 @@ class Space < ApplicationRecord
     bottom = self.space_ratings.size.to_f
     top = self.space_ratings.sum(:score).to_f
     average = top/bottom
-    binding.pry
     return average
   end
 end
-
-
-# def average_spud_score
-#     review_count = self.reviews.count
-#     score_total = self.reviews.map(&:spud_score).inject(0, &:+)
-#     if review_count > 0
-#       average = (score_total / review_count).to_f
-#     else
-#       0
-#     end
-#     return average
-#   end
