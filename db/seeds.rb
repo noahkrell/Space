@@ -40,8 +40,8 @@ end
 
 5.times do
   SpaceRating.create!(booking: booking_array.sample,
-                      review: Faker::Lorem.paragraph,
-                      stars: [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].sample)
+                      comment: Faker::Lorem.paragraph,
+                      score: [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].sample)
 end
 
 

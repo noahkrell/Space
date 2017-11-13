@@ -12,6 +12,7 @@
 //
 //= require jquery/jquery
 //= require moment
+//= require raty/jquery.raty.js
 //= require bootstrap/js/bootstrap.bundle
 //= require jquery-easing/jquery.easing
 //= require scrollreveal/scrollreveal

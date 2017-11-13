@@ -13,38 +13,57 @@
     </div>
   </div>
 
-  <div class="show-content">
-    <div class="row">
-      <div class="col-md-6">
-        <h2> <%= @space.title %> </h2>
-        <p>Location: <%= @space.location %></p>
-        <p>Description: <%= @space.description %></p>
-        <p> Price: <%= @space.price %></p>
-        <p>Rules: <%= @space.rules %></p>
+<div class="show-content">
+  <div class="row">
+    <div class="col-md-6">
+      <h2> <%= @space.title %> </h2>
+      <p>Location: <%= @space.location %></p>
+      <p>Description: <%= @space.description %></p>
+      <p> Price: <%= @space.price %></p>
+      <p>Rules: <%= @space.rules %></p>
 
-        <div class="space-ratings">
-          <% if @space.bookings.count > 0 %>
-            <% @space.bookings.each do |booking| %>
-              <% space_rating = SpaceRating.find_by(booking_id: booking.id) %>
-              <% renter = User.find_by(id: booking.renter_id) %>
-              <%= renter.first_name %> <%= space_rating.stars %><br>
-              <%= booking.end_time.strftime("%B %Y") %><br>
-              <%= space_rating.review %><br><br>
-            <% end %>
-          <% else %>
-            This space has no reviews.
-          <% end %>
-        </div>
-      </div>
-      <div class="col-md-6" id="day-schedule">
+    <div class="space-ratings">
+      <% if @space.space_ratings.count == 0 %>
+        <h3>Reviews</h3>
+        This space has no reviews.
+      <% else %>
+        <h3><%= @space.space_ratings.count %> Reviews</h3>
+          <% @space.space_ratings.each do |rating| %>
+            <% booking = Booking.find_by(id: rating.booking_id) %>
+            <% renter = User.find_by(id: booking.renter_id) %>
+            <%= renter.first_name %> <div class="star" data-score="<%= rating.score %>"></div>
+            <%= booking.end_time.strftime("%B %Y") %><br>
+            <%= rating.comment %><br><br>
+        <% end %>
+      <% end %>
+    </div>
+
+  <div class="new-review-form ">
+    <%= form_with scope: :space_ratings, url: reviews_path, local: true do |form| %>
+
+    <p>
+      <%= form.label "Your Review:" %><br>
+      <%= form.text_area :comment %>
+    </p>
+    <p>
+      <%= form.submit 'Submit Review' %>
+    </p>
+    <% end %>
+  </div>
+  
+  <div class="col-md-6" id="day-schedule">
         
       </div>
       <div class="col-md-6" id="booking-confirmation">
         <h1>Your booking</h1>
       </div>
+
+
+
+    </div>
     </div>
   </div>
-</div>  
+</div>
 
 
 
