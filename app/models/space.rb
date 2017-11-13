@@ -6,6 +6,8 @@ class Space < ApplicationRecord
   belongs_to :owner, class_name: 'User'
   
   validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
+  geocoded_by :location   # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
 
 
   include PgSearch

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   post '/reviews', to: 'space_ratings#create'
+  post 'spaces/:id/book', to: "bookings#create"
 
   resources :spaces
 
