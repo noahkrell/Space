@@ -6,4 +6,16 @@ $(document).ready(function() {
     path: '/assets'
   });
 
+  $('.user_star').raty({
+  score: $(this).data('score'),
+  path: '/assets',
+  click: function(score, evt) {
+    $.ajax({
+      url: '/spaces/',
+      type: 'PATCH',
+      data: { score: score }
+    }).done(function (data){});
+  }
+});
+
 });

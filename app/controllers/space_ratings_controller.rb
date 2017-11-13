@@ -17,15 +17,14 @@ class SpaceRatingsController < ApplicationController
 
 
   def create
-    binding.pry
-    @space = SpaceRating.find_by(:api_id => params[:review][:booking_id].to_i)
+    @space = Space.find(params[:space_ratings][:space_id].to_i)
     space_rating_hash = {}
     space_rating_hash[:comment] = space_rating_params[:comment]
     space_rating_hash[:score] = params[:score].to_i if params[:score].to_i > 0
-    space_rating_hash[:booking_id] = @booking.id
-    space_rating_hash[:user_id] = current_user.id
+    space_rating_hash[:booking_id] = 1
 
     @review = SpaceRating.new(space_rating_hash)
+    binding.pry
     if @review.save
       redirect_to "/spaces/#{@space.id}"
     else
@@ -37,6 +36,6 @@ class SpaceRatingsController < ApplicationController
 
   private
   def space_rating_params
-    params.require(:review).permit(:comment, :score, :booking_id)
+    params.require(:space_ratings).permit(:comment, :score)
   end
 end
