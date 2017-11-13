@@ -1,7 +1,8 @@
 <div class="main-content container">
   <div class="row space-img-container">
     <div class="col-md-6 space-img-bucket">
-      <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image">
+      <!-- <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image"> -->
+            <%= image_tag @space.space_image.url(:large), :class=>"show-banner-img" %>
     </div>
     <div class="col-md-6" id="show-map-container">
       <iframe id="map-show"
@@ -21,7 +22,6 @@
       <p>Description: <%= @space.description %></p>
       <p> Price: <%= @space.price %></p>
       <p>Rules: <%= @space.rules %></p>
-      <%= image_tag @space.space_image(:large) %>
 
     <div class="space-ratings">
       <% if @space.space_ratings.count == 0 %>
