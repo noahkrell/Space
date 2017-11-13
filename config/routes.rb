@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  post '/spaces', to: 'space_ratings#create'
+  post '/spaces/:id/review', to: 'space_ratings#create'
   post '/spaces', to: 'spaces#index'
 
   resources :spaces, only: [:index, :show]

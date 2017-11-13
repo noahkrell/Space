@@ -46,7 +46,7 @@
     </div>
 
   <div class="new-review-form ">
-    <%= form_with scope: :space_ratings, url: spaces_path, local: true do |form| %>
+    <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
 
     <p>
       <%= form.hidden_field :space_id, :value => @space.id %>
