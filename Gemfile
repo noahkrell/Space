@@ -37,6 +37,8 @@ gem 'pry'
 gem 'faker'
 gem 'pg_search'
 gem 'momentjs-rails'
+gem 'geocoder'
+
 # gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 group :development, :test do

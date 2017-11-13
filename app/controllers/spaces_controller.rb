@@ -5,6 +5,8 @@ class SpacesController < ApplicationController
       @spaces = Space.all
     else
       @spaces = Space.search_by_address(params[:search])
+      @map_markers = Space.near(params[:search])
+      # binding.pry
     end
   end
 
