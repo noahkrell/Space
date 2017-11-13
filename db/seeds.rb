@@ -4,7 +4,7 @@
               password: "password",
               password_confirmation: "password",
               email: Faker::Internet.email,
-              host: [true, false].sample,
+              host: true,
               birthday: Faker::Date.birthday(18, 100),
               phone_number: Faker::PhoneNumber.phone_number)
 end
