@@ -100,8 +100,8 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
-  # Paperclip::Attachment.default_options[:s3_region] = 'us-east-2'
-  # Paperclip::Attachment.default_options[:s3_host_name] = 's3-us-east-2.amazonaws.com'
+  Paperclip::Attachment.default_options[:s3_region] = 'us-east-2'
+  Paperclip::Attachment.default_options[:s3_host_name] = 'dbc-space-app.s3.amazonaws.com'
  
 end
 
