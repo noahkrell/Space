@@ -20,7 +20,7 @@ class SpaceRatingsController < ApplicationController
     @booking = Booking.where(space_id: @space.id, renter_id: current_user.id).last
     space_rating_hash = {}
     space_rating_hash[:comment] = space_rating_params[:comment]
-    space_rating_hash[:score] = params[:score].to_i if params[:score].to_i > 0
+    space_rating_hash[:score] = params[:score].to_f if params[:score].to_f > 0
     space_rating_hash[:booking_id] = @booking.id
     @review = SpaceRating.new(space_rating_hash)
     if @review.save

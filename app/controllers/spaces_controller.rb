@@ -13,6 +13,10 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @bookings = Booking.where(space_id: @space.id)
+    @existing_bookings = Booking.where(space_id: @space.id, renter_id: current_user.id)
+    if !@existing_bookings.empty?
+      @most_recent_booking = @existing_bookings.last
+    end
   end
 
 end

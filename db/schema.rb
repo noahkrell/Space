@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20171113033741) do
   create_table "space_ratings", force: :cascade do |t|
     t.integer "booking_id"
     t.text "comment"
-    t.integer "score"
+    t.decimal "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
