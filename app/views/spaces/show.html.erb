@@ -23,12 +23,12 @@
       <p> Price: $<%= @space.price %>/hr</p>
       <p>Rules: <%= @space.rules %></p>
       <p>Amenities:
-      <ul>
-        <% @space.amenities.each do |amenity| %>
+        <ul>
+          <% @space.amenities.each do |amenity| %>
           <li><%= amenity.name %></li>
-        <% end %>
-     </ul>
-     </p>
+          <% end %>
+        </ul>
+      </p>
       <div class="space-ratings">
         <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
@@ -73,26 +73,26 @@
       </div>
 
 
-    <div class="col-md-6">
-      <h1 style="text-align: center;">Book some time...</h1>
-      <div id="day-schedule"></div>
-      <div id="booking-confirmation"></div>
+      <div class="col-md-6">
+        <h1 style="text-align: center;">Book some time...</h1>
+        <div id="day-schedule"></div>
+        <div id="booking-confirmation"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $( document ).ready(function() {
+  <script>
+    $( document ).ready(function() {
 
-    (function ($) {
+      (function ($) {
       // iterate through each space booking
-        // change color of time block that corresponds to the booking start - end times
-    <% @bookings.each do |booking| %>
-    var booking = {
-      '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]
+        // change color of time block that corresponds to the booking start - end times 
+        <% @bookings.each do |booking| %>
+        var booking = {
+          '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]
         }
-      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
-    <% end %>
-     })($);
-  });
-</script>
+        $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
+        <% end %>
+      })($);
+    });
+  </script>
