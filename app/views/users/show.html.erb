@@ -9,6 +9,7 @@
         <ul>
           <% @user.spaces.each do | space | %>
             <li> <%= link_to space.title, space %></li>
+            <%= image_tag space.space_image.url(:thumb) %>
             <p><%= link_to "Edit", edit_host_space_path(:space => space.id)
              %></p>
           <% end %>
@@ -21,6 +22,7 @@
         <ul>
           <% @user.bookings.each do | booking | %>
             <li> <%= link_to booking.space.title, booking.space %></li>
+            <%= image_tag booking.space.space_image.url(:thumb) %>
           <% end %>
         </ul>
     <% end %>
