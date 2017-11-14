@@ -17,10 +17,11 @@ class SpaceRatingsController < ApplicationController
 
   def create
     @space = Space.find(params[:space_ratings][:space_id].to_i)
+    @booking = Booking.where(space_id: @space.id, renter_id: current_user.id).last
     space_rating_hash = {}
     space_rating_hash[:comment] = space_rating_params[:comment]
     space_rating_hash[:score] = params[:score].to_i if params[:score].to_i > 0
-    # space_rating_hash[:booking_id] = params[:booking_id].to_i
+    space_rating_hash[:booking_id] = @booking.id
     @review = SpaceRating.new(space_rating_hash)
     if @review.save
       redirect_to "/spaces/#{@space.id}"
@@ -28,7 +29,6 @@ class SpaceRatingsController < ApplicationController
       flash[:notice] = "You've already reviewed this booking."
       redirect_to "/spaces/#{@space.id}"
     end
-
   end
 
   private
