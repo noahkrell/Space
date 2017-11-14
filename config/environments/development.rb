@@ -67,7 +67,7 @@ Rails.application.configure do
   Paperclip.options[:command_path] = 'usr/local/bin'
 
 # Might use for geocode IP address testing
-  config.middleware.use('SpoofIp', '70.88.2.230')
+  # config.middleware.use('SpoofIp', '70.88.2.230')
 end
 
 
