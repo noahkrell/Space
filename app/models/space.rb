@@ -10,7 +10,7 @@ class Space < ApplicationRecord
 	medium: '300x300>',
   large: '600x600>'
 	}
-  validates :title, :description, :price, :rules, :location, :city, :state, :country, presence: true
+  validates :title, :description, :price, :rules, :location, :city, :country, presence: true
   validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
   geocoded_by :location   # can also be an IP address
