@@ -18,7 +18,8 @@ Space.create!(title: "DevBootcamp Campus",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/001/original/pexels-photo-271724.jpeg")
 
 
 Space.create!(title: "Comfy Private Office",
@@ -29,7 +30,8 @@ Space.create!(title: "Comfy Private Office",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/002/original/office-home-house-desk-159839.jpeg")
 
 Space.create!(title: "Remodeled Basement Office",
               description: "We have recently remodeled our basement into a workspace. It has everything you need including restrooms, fridge, microwave, seperate entrance, extra monitor, and the infamous GoogleFiber!",
@@ -39,7 +41,8 @@ Space.create!(title: "Remodeled Basement Office",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/003/original/pexels-photo-260928.jpeg")
 
 Space.create!(title: "Downtown Studio Space",
               description: "Unused studio space with internet, full-furnished, and great downtown view. It is a small space, so probably not best for large group projects, but perfect for getting some quiet time out of the house.",
@@ -49,7 +52,8 @@ Space.create!(title: "Downtown Studio Space",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/004/original/pexels-photo-667838.jpeg")
 
 Space.create!(title: "Private Space - Torchy's Tacos",
               description: "Here at Torchy's we believe that working and playing go hand-in-hand. At our South Lamar location we have a private backroom that just isn't getting the attention it deserves! Wifi capability and work and drinks at your service, bring a group and come get some work done over dinner.",
@@ -59,7 +63,8 @@ Space.create!(title: "Private Space - Torchy's Tacos",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/005/original/pexels-photo-373904.jpeg")
 
 Space.create!(title: "Homey Eastside Space",
               description: "We work long hours and want to put our space to use while we are away! Our neighborhood just got GoogleFiber so forget about lousy internet connections. You are welcome to enjoy our house fully, make yourself some coffee, grab a snack, cook a meal, even take a shower! We've got indoor and outdoor workspace, so just make yourself at home and get it done!",
@@ -69,7 +74,8 @@ Space.create!(title: "Homey Eastside Space",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/006/original/pexels-photo-265004.jpeg")
 
 Space.create!(title: "Fresh Air - Country Home",
               description: "Need to get out of the city for a day? Come on down to our ranch style house to get a breath of fresh air to focus. We have a porch overlooking the pond, wifi, and fully-functioning kitchen and fireplace. If you're still there when we get home, you might even enjoy a nice home-cooked meal on us!",
@@ -79,7 +85,8 @@ Space.create!(title: "Fresh Air - Country Home",
               city: "Norwood",
               state: "NC",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/007/original/pexels-photo-257344.jpeg")
 
 Space.create!(title: "Bar Backroom",
               description: "Need a late night space to get some work done? At Orange County Social Club we have just the room for you. Seperated from the rest of the bar (but don't worry, still full bar and kitchen service) you won't have to worry about the noise all the while enjoying the drinks. We also have a TV set up for screen mirroring and a printer in the corner if you need it.",
@@ -99,7 +106,8 @@ Space.create!(title: "Owens Garage",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/008/original/desk-office-computer-work.jpg")
 
 Space.create!(title: "Blue Sky Cafe",
               description: "We are a popular east Nashville cafe and restaurant (you might have seen us on the show 'Nashville') and we're opening our space up to include workspaces for rent. Probably better for solo workers, expect a cafe style vibe, but with extra amenities including free coffee, free printing, and after hours availability.",
@@ -129,7 +137,8 @@ Space.create!(title: "Empty Apartment",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/004/original/pexels-photo-276724.jpeg")
 
 Space.create!(title: "Beach Office",
               description: "We know you're on vacation, but we also know that sometimes work can't wait. Come enjoy our beach office and get the best of both worlds! Includes, wifi, fridge, coffee, bathrooms, open aired workspace, beach views, hammock, and towels for that spontaneous ocean dip.",
