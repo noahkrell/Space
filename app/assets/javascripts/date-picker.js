@@ -10,6 +10,7 @@ $( document ).ready(function() {
 
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
+      debugger
       var start_time = selected.data().time
       var end_time = selected[selected.length-1].dataset.time
       var today = moment(new Date());
@@ -20,16 +21,24 @@ $( document ).ready(function() {
         data: { booking: {day: day, date: weekday, start_time: start_time, end_time: end_time} },
         dataType: 'json'
       }).done(function(resp) {
-        var start = new Date(resp.booking.start_time)
+        // debugger
+        var start = new Date(resp.booking.start_time);
         var end = new Date(resp.booking.end_time)
+        end.setHours(end.getHours() + 1);
         $("#day-schedule").hide()
         $("#booking-confirmation").show().append("Starts " + start + "<br>" + "Ends " + end);
       });
     })
 
-    $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-      '0': [['09:30', '11:00'], ['13:00', '16:30']]
-    });
+    
+    // $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
+    //   '2': [['10:00', '12:00']]
+    // });
+    // iterate through every time slot
+      // iterate through every booking
+        // if the time slot is equal to the start or end time of the booking, OR BETWEEN the start and end time of the booking
+  
+
 
   })($);
 
