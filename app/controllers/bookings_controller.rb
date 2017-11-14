@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     start_time_obj = Time.parse(start_time)
     end_time = params[:booking][:date] + " #{params[:booking][:end_time]}"
     end_time_obj = Time.parse(end_time)
-    # binding.pry
     if !current_user
       respond_to do |format|
         format.json { render json: {alert: "You must be logged in to book!"}}

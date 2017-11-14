@@ -68,19 +68,15 @@
 
 <script>
   $( document ).ready(function() {
-    // function getDayNum(day) {
-
-    // }
 
     (function ($) {
     <% @bookings.each do |booking| %>
     var booking = {
-        <%#=binding.pry%>
-          '<%= j booking.start_time.wday.to_s%>': ['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']
-          // '2': [['10:00', '12:00']]
+      '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]
+      // '2': [['10:00', '12:00']]
         }
-        // debugger;
       $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
+
     <% end %>
      })($);
   });

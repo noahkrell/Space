@@ -8,5 +8,9 @@ class Booking < ApplicationRecord
     self[:start_time].in_time_zone('US/Central')
   end
 
+  def end_time
+    self[:end_time].in_time_zone('US/Central')
+  end
+
 
 end
