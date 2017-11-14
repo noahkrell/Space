@@ -65,6 +65,9 @@ Rails.application.configure do
   Paperclip::Attachment.default_options[:s3_region] = 'us-east-2'
   Paperclip::Attachment.default_options[:s3_host_name] = 's3-us-east-2.amazonaws.com'
   Paperclip.options[:command_path] = 'usr/local/bin'
+
+# Might use for geocode IP address testing
+  config.middleware.use('SpoofIp', '70.88.2.230')
 end
 
 

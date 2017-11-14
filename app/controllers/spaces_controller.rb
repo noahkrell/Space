@@ -7,7 +7,7 @@ class SpacesController < ApplicationController
       @map_markers = Space.near("Austin, TX")
     else
       @spaces = Space.search_by_address(params[:search])
-      @map_markers = Space.near(params[:search])
+      @map_markers = Space.search_by_address(params[:search])
     end
   end
 

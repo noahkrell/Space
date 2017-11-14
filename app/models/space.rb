@@ -13,17 +13,17 @@ class Space < ApplicationRecord
   validates :title, :description, :price, :rules, :location, :city, :country, presence: true
   validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
-  geocoded_by :full_street_address   # can also be an IP address
+  geocoded_by :full_address   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 
 
 
   include PgSearch
 
-  pg_search_scope :search_by_address, :against => [:city, :state, :country]
+  pg_search_scope :search_by_address, :against => [:location, :city, :state, :country]
 
-  def full_street_address
-    self.location + ", " + self.city + ", " + self.state + ", "
+  def full_address
+    [location, city, state].compact.join(', ')
   end
 
 

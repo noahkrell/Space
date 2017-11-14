@@ -12,11 +12,11 @@
     </div>
     <script>
       function initMap() {
-        <%# if params[:search] == "" %>
-          //var center = {lat: request.location.latitude, lng: request.location.longitude} 
-        <%# else %>
+        <% if @map_markers.empty? %>
+          var center = {lat: request.location.latitude, lng: request.location.longitude} 
+        <% else %>
           var center = {lat: <%=@map_markers[0].latitude%>, lng: <%=@map_markers[0].longitude%>};
-        <%#end%>
+        <%end%>
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center: center
