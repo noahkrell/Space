@@ -42,7 +42,7 @@ class Host::SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:title, :description, :price, :rules, :location, :city, :state, :country)
+    params.require(:space).permit(:title, :description, :price, :rules, :location, :city, :state, :country, :space_image)
   end
 
   def require_host
