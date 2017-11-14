@@ -70,13 +70,13 @@
   $( document ).ready(function() {
 
     (function ($) {
+      // iterate through each space booking
+        // change color of time block that corresponds to the booking start - end times 
     <% @bookings.each do |booking| %>
     var booking = {
       '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]
-      // '2': [['10:00', '12:00']]
         }
       $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
-
     <% end %>
      })($);
   });
