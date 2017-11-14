@@ -1,9 +1,10 @@
 class SpacesController < ApplicationController
 
   def index
-    if params[:search] == nil
+    # binding.pry
+    if params[:search].empty?
       @spaces = Space.all
-      @map_markers = Space.near(request.location)
+      @map_markers = Space.near("Austin, TX")
     else
       @spaces = Space.search_by_address(params[:search])
       @map_markers = Space.near(params[:search])
