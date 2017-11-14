@@ -16,10 +16,21 @@ $( document ).ready(function() {
       return new Date(d.setDate(diff));
     }
 
+    String.prototype.replaceAt=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+    }
+
+    function incrementHour(h) {
+      var plusOneHour = parseInt(h[1]) + 1
+      var newHour = plusOneHour.toString()
+      return h.replaceAt(1, newHour)
+    }
+
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
       var start_time = selected.data().time
-      var end_time = selected[selected.length-1].dataset.time
+      var end_time = incrementHour(selected[selected.length-1].dataset.time)
+      debugger
       var sunday = getSunday(new Date());
       var date = new Date();
       date.setDate(sunday.getDate() + selected.data().day)
