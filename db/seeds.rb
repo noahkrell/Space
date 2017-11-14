@@ -127,7 +127,8 @@ Space.create!(title: "Historic South Austin Space",
               city: "Austin",
               state: "TX",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/001/original/pexels-photo-106936.jpeg")
 
 Space.create!(title: "Empty Apartment",
               description: "I live with my partner, so my apartment is mostly empty and available. It's a top floor, modern style, corner unit, so great views and generally quiet, comes with a bed for napping and a kitchen and bathroom.",
