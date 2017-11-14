@@ -38,7 +38,7 @@
     </div>
     <div class="form-row md-form">
       <%= f.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) do |amenity| %>
-      <div class="form-group col-sm-2" >
+      <div class="form-group col-sm-4" >
        <%= amenity.label { amenity.check_box(class: "check_box") + amenity.text }%>
      </div>
       <% end %>
