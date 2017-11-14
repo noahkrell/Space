@@ -14,9 +14,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
-    # @bookings = Booking.find_by(space_id: @space.id)
     @bookings = Booking.where(space_id: @space.id)
-    # binding.pry
   end
 
 end

@@ -46,12 +46,11 @@ $( document ).ready(function() {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
       var start_time = selected.data().time
       var end_time = incrementHour(selected[selected.length-1].dataset.time)
-      debugger
       var sunday = getSunday(new Date());
       var date = new Date();
       date.setDate(sunday.getDate() + selected.data().day)
       weekday = date.toDateString()
-      
+
       $.ajax({
         url: window.location.pathname + "/book",
         type: "POST",
