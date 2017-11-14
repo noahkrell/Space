@@ -67,7 +67,20 @@
 </div>
 
 <script>
+  $( document ).ready(function() {
+    (function ($) {
+    <% @bookings.each do |booking| %>
+    <%#=binding.pry%>
+      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
+        <%#=binding.pry%>
 
+          '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]
+          <%#=binding.pry%>
+          // '2': [['10:00', '12:00']]
+        });
+    <% end %>
+     })($);
+  });
 </script>
 
 

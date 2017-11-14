@@ -10,7 +10,6 @@ $( document ).ready(function() {
 
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
-      debugger
       var start_time = selected.data().time
       var end_time = selected[selected.length-1].dataset.time
       var today = moment(new Date());
