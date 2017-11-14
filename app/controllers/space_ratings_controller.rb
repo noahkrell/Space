@@ -24,9 +24,7 @@ class SpaceRatingsController < ApplicationController
     space_rating_hash[:booking_id] = @booking.id
     @review = SpaceRating.new(space_rating_hash)
     if @review.save
-      redirect_to "/spaces/#{@space.id}"
-    else
-      flash[:notice] = "You've already reviewed this booking."
+      flash[:success] = "Thanks for your review!"
       redirect_to "/spaces/#{@space.id}"
     end
   end
