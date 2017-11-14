@@ -1,10 +1,18 @@
-<div class="main-content container">
-	<% provide(:button_text, 'Edit your space') %>
-	<h1>Edit your space</h1>
-
-	<%= render "form" %>
-  <% if @space.owner == current_user %>
-    <p>Remove your space? <%= link_to "Delete", [:host, @space], method: :delete,
-                                  data: { confirm: "Are you sure?" } %></p>
-  <% end %>
+<div class="row flex-center pt-5 mt-3">
+	<div class="col-md-6 col-xl-5 mx-auto">
+		<div class="card">
+			<div class="card-body">
+				<div class="text-center">
+					<h3 class="white-text"><i class="fa fa-space white-text"></i> Edit your space</h3>
+					<hr>
+				</div>
+				<% provide(:button_text, 'Edit your space') %>
+				<%= render "form" %>
+				<% if @space.owner == current_user %>
+				<p>Remove your space? <%= link_to "Delete", [:host, @space], method: :delete,
+					data: { confirm: "Are you sure?" } %></p>
+					<% end %>
+			</div>
+		</div>
+	</div>
 </div>
