@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20171113033741) do
     t.string "last_name", null: false
     t.string "password_digest", null: false
     t.string "email", null: false
-    t.boolean "host", default: false
+    t.boolean "host", default: true
     t.date "birthday", null: false
     t.string "phone_number"
     t.datetime "created_at", null: false
