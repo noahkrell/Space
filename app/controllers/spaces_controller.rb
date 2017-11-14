@@ -12,6 +12,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @bookings = Booking.where(space_id: @space.id)
   end
 
 end

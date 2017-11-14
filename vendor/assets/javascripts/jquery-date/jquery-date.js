@@ -22,7 +22,7 @@
     startTime   : '08:00',                // HH:mm format
     endTime     : '20:00',                // HH:mm format
     interval    : 30,                     // minutes
-    stringDays  : [getWeekday(0) + " (today)", getWeekday(1), getWeekday(2), getWeekday(3), getWeekday(4), getWeekday(5), getWeekday(6)],
+    stringDays  : ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
     template    : '<div class="day-schedule-selector">'         +
                     '<table class="schedule-table">'            +
                       '<thead class="schedule-header"></thead>' +
