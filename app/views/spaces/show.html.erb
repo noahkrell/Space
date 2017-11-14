@@ -39,18 +39,28 @@
         <% end %>
       <% end %>
     </div>
-
-  <div class="new-review-form ">
-    <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
-      <%= form.hidden_field :space_id, :value => @space.id %>
-      <%= form.hidden_field :renter_id, :value => current_user.id %>
-      <%= form.label "Your Review:" %><div class="user_star" data-score=""></div>
-      <%= form.text_area :comment %>
-      <%= form.submit 'Submit Review' %>
-    <% end %>
+    <div class="card">
+      <div class="card-body">
+        <div class="text-left">
+          <div class="new-review-form form-group">
+            <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
+            <%= form.hidden_field :space_id, :value => @space.id %>
+            <%= form.hidden_field :renter_id, :value => current_user.id %>
+            <%= form.label "Your Review:" %><div class="user_star" data-score=""></div>
+            <div class="form-group md-form">
+              <%= form.text_area :comment, :class => "form-control" %>
+            </div>
+            <div class="form-group text-center">
+              <%= form.submit 'Submit Review', :class => "btn btn-primary" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
+  
     <div class="col-md-6">
       <h1 style="text-align: center">Availability</h1>
       <div id="day-schedule">
