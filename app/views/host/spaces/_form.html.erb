@@ -1,5 +1,5 @@
 
-  <%= form_for [:host, @space] do |f| %>
+  <%= form_for [:host, @space], :html => {:class => 'space-form'} do |f| %>
     <%= render 'error_messages' %>
     <div class="form-row md-form">
       <div class="form-group col-md-6 md-form" >
@@ -32,6 +32,16 @@
     <div class="form-group md-form">
       <%= f.label :rules, "Rules" %>
       <%= f.text_area :rules, :id => "rules", :class => "form-control" %>
+    </div>
+    <div class="form-group md-form">
+          <%= f.label "Amenities" %>
+    </div>
+    <div class="form-row md-form">
+      <%= f.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) do |amenity| %>
+      <div class="form-group col-sm-2" >
+       <%= amenity.label { amenity.check_box(class: "check_box") + amenity.text }%>
+     </div>
+      <% end %>
     </div>
     <div class="form-group md-form">
       <%= f.label :space_image, "Upload an image" %>

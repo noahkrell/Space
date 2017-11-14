@@ -22,7 +22,13 @@
       <p>Description: <%= @space.description %></p>
       <p> Price: $<%= @space.price %>/hr</p>
       <p>Rules: <%= @space.rules %></p>
-
+      <p>Amenities:
+      <ul>
+        <% @space.amenities.each do |amenity| %>
+          <li><%= amenity.name %></li>
+        <% end %>
+     </ul>
+     </p>
       <div class="space-ratings">
         <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
