@@ -8,12 +8,22 @@ $( document ).ready(function() {
       endTime: '20:00'  
     });
 
+
+    function getSunday(d) {
+      d = new Date(d);
+      var day = d.getDay(),
+          diff = d.getDate() - day; // adjust when day is sunday
+      return new Date(d.setDate(diff));
+    }
+
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
       var start_time = selected.data().time
       var end_time = selected[selected.length-1].dataset.time
-      var today = moment(new Date());
-      var weekday = today.add(selected.data().day, 'days').format("MMM Do YYYY")
+      var sunday = getSunday(new Date());
+      var date = new Date();
+      date.setDate(sunday.getDate() + selected.data().day)
+      weekday = date.toDateString()
       $.ajax({
         url: window.location.pathname + "/book",
         type: "POST",
@@ -27,11 +37,12 @@ $( document ).ready(function() {
         $("#day-schedule").hide()
         $("#booking-confirmation").show().append("Starts " + start + "<br>" + "Ends " + end);
       });
+
     })
 
     
     // $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-    //   '2': [['10:00', '12:00']]
+    //   '1': [['10:00', '12:00']]
     // });
     // iterate through every time slot
       // iterate through every booking
