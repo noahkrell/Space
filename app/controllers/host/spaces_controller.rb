@@ -34,7 +34,7 @@ class Host::SpacesController < ApplicationController
   def destroy
     @user = current_user
     Space.find(params[:id]).destroy
-    
+
     flash[:success] = "Space deleted"
     redirect_to @user
   end
@@ -42,7 +42,7 @@ class Host::SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:title, :description, :price, :rules, :location, :city, :state, :country, :space_image)
+    params.require(:space).permit(:title, :description, :price, :rules, :location, :city, :state, :country, :space_image, :amenity_ids => [])
   end
 
   def require_host

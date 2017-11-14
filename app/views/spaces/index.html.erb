@@ -5,7 +5,15 @@
     <div class="col-md-8">
       <div class="row">
       <% @spaces.each do |space| %>
-      <div class="col-md-6"><p><%= link_to space.title, space_path(:id => space.id) %></p></div>
+      <div class="col-md-6">
+        <figure class="text-center">
+          <%= image_tag space.space_image.url(:square) %>
+          <figcaption>
+            <%= link_to space.title, space_path(:id => space.id) %>
+          </figcaption>
+        </figure>
+      </div>
+
       <% end %>
       </div>
     </div>
@@ -13,7 +21,3 @@
       <%= render 'shared/results_map', locals: { markers: @map_markers } %>
     </div>
   </div>
-<div class="main-content container">
-<!DOCTYPE html>
-
-
