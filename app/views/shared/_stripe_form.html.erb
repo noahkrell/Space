@@ -1,4 +1,4 @@
-<%= form_tag charges_path do %>
+<%= form_tag charges_path, :class => 'stripe_form' do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -6,18 +6,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>$<%=@space.price%></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
+          data-description="Space Payment"
+          data-amount=<%=@space.price * 100 %>
+          data-locale="auto">
+  </script>
 <% end %>
-
-<div class="spinner">
-  <div class="double-bounce1"></div>
-  <div class="double-bounce2"></div>
-</div>

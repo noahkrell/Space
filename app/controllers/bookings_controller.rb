@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     else
       @booking = Booking.create(space_id: params[:id].to_i, renter_id: current_user.id, start_time: start_time_obj, end_time: end_time_obj)
       respond_to do |format|
-        format.json { render json: {alert: "Thanks for booking, #{current_user.first_name}!", booking: @booking}}
+        format.json { render json: {alert: "Thanks for booking, #{current_user.first_name}!", booking: @booking, space: Space.find(@booking.space_id)}}
       end
     end
 

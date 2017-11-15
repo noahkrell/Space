@@ -75,14 +75,20 @@
       <div class="col-md-6">
         <h1 style="text-align: center;">Book some time...</h1>
         <div id="day-schedule"></div>
-        <div id="booking-confirmation"></div>
+        <div id="booking-confirmation">
+          <%= render "spinner" %> 
+          <%= render "booking_modal", locals: {booking: @booking} %> 
+        </div>       
       </div>
     </div>
   </div>
 
+
+
+<%#= render "shared/stripe_form", locals: {space: @space} %>
+
   <script>
     $( document ).ready(function() {
-
       (function ($) {
       // iterate through each space booking
         // change color of time block that corresponds to the booking start - end times
