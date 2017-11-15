@@ -7,12 +7,18 @@ class SpacesController < ApplicationController
   end
 
   def index
+    @search_term = params[:search]
       if params[:search].empty?
         @spaces = Space.all
         @map_markers = Space.near("Austin, TX")
       else
         @spaces = Space.search_by_address(params[:search])
-        @map_markers = Space.search_by_address(params[:search])
+        if @spaces.empty?
+          flash[:danger] = "Currently no spaces in that area"
+          redirect_to root_path
+        else
+          @map_markers = Space.search_by_address(params[:search])
+        end
       end
   end
 

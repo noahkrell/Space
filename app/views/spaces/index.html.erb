@@ -2,7 +2,9 @@
 
 <div class="main-content container">
   <h1 class="my-4">Spaces
-    <small>in <%= @spaces.first.city %></small>
+    <% if !@search_term.empty? %>
+    <small>near <%= @search_term %></small>
+    <% end %>
   </h1>
 
   <div class="row">
