@@ -75,17 +75,23 @@
       <div class="col-md-6">
         <h1 style="text-align: center;">Book some time...</h1>
         <div id="day-schedule"></div>
-        <div id="booking-confirmation"></div>
+        <div id="booking-confirmation">
+          <%= render "spinner" %> 
+          <%= render "booking_modal", locals: {booking: @booking} %> 
+        </div>       
       </div>
     </div>
   </div>
 
+
+
+<%#= render "shared/stripe_form", locals: {space: @space} %>
+
   <script>
     $( document ).ready(function() {
-
       (function ($) {
       // iterate through each space booking
-        // change color of time block that corresponds to the booking start - end times 
+        // change color of time block that corresponds to the booking start - end times
         <% @bookings.each do |booking| %>
         var booking = {
           '<%= j booking.start_time.wday.to_s%>': [['<%= j booking.start_time.strftime("%H:%M")%>', '<%= j booking.end_time.strftime("%H:%M")%>']]

@@ -9,24 +9,36 @@
     <div class="col-md-8">
       <%= render 'shared/results_map', locals: { markers: @map_markers } %>
     </div>
+  </div><br>
+
+<%= search_form_for @search, url: '/spaces/filter',
+                             html: {method: :post} do |f| %>
+  <div class="field">
+    <%= f.label :price_gteq, "Filter by Price: Min" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price_lteq, "Max" %>
+    <%= f.text_field :price_lteq %>
+  <div class="actions" style="display: inline"><%= f.submit "Apply" %></div>
   </div>
+<% end %>
 
   <div class="row">
     <% @spaces.each do |space| %>
     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-      <div class="card h-100">
-        <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "card-img-top" %>
+      <div class="card h-100 my-rentals">
+        <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto"  %>
         <div class="card-body space_icon">
-          <h4 class="card-title">
+          <h4 class="card-title text-center">
             <%= link_to space.title, space_path(:id => space.id) %>
           </h4>
+          <hr>
           <p class="card-text"><%= space.description %></p>
         </div>
       </div>
     </div>
     <% end %>
 
-<!-- 
+<!--
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
