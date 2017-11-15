@@ -61,6 +61,7 @@ $( document ).ready(function() {
         var end = new Date(resp.booking.end_time)
         $("#day-schedule").hide()
         $("#booking-confirmation").show().append("Starts " + start + "<br>" + "Ends " + end);
+        $(".stripe_form").hide()
       });
 
     })
