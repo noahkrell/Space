@@ -19,7 +19,6 @@ class SpacesController < ApplicationController
   def filter
     @spaces = @search.result
     @map_markers = Space.markers_of(@spaces)
-    binding.pry
     render :index
   end
 
