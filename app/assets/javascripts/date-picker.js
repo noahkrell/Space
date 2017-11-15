@@ -60,8 +60,9 @@ $( document ).ready(function() {
         var start = new Date(resp.booking.start_time);
         var end = new Date(resp.booking.end_time)
         $("#day-schedule").hide()
-        $("#booking-confirmation").show().append("Starts " + start + "<br>" + "Ends " + end);
+        $("#booking-confirmation").show().prepend("Starts " + start + "<br>" + "Ends " + end);
         $(".stripe_form").hide()
+        $("#payment-modal").show()
       });
 
     })
