@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   (function ($) {
     $("#payment-modal").hide()
+    $("#confirmation-spinner").hide()
 
     $("#day-schedule").dayScheduleSelector({  
       days: [0, 1, 2, 3, 4, 5, 6],
@@ -52,6 +53,12 @@ $( document ).ready(function() {
       return (timeBlocks * hourlyPrice)
     }
 
+    // function showSpinner() {
+    //   document.getElementById("confirmation-spinner").style.display="block";
+    //   setTimeout(function(){ $("#confirmation-spinner").hide() }, 2000);
+    // }
+
+
     // function to pass booking data to controller to save to the db
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
       var day = $(".schedule-header th")[selected.data().day+1].innerHTML
@@ -76,8 +83,10 @@ $( document ).ready(function() {
         var endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
         var totalPrice = getTotalPrice(timeBlocks, resp.space.price)
         $("#day-schedule").hide()
-        $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price($" + String(resp.space.price) + ") X Hours(" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
-        $(".stripe_form").hide()
+        // showSpinner()
+        document.getElementById("confirmation-spinner").style.display="none";
+        $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price ($" + String(resp.space.price) + ") X Hours (" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
+        // $(".stripe_form").hide()
         $("#payment-modal").show()
       });
 

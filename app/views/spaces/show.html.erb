@@ -76,11 +76,14 @@
         <h1 style="text-align: center;">Book some time...</h1>
         <div id="day-schedule"></div>
         <div id="booking-confirmation">
+          <%= render "spinner" %> 
           <%= render "booking_modal", locals: {booking: @booking} %> 
         </div>       
       </div>
     </div>
   </div>
+
+
 
 <%#= render "shared/stripe_form", locals: {space: @space} %>
 

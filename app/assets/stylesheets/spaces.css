@@ -67,6 +67,10 @@
   text-align: center;
 }
 
+.payment-modal-header {
+  text-align: center;
+}
+
 
 .schedule-rows td[data-selected],
 .schedule-rows td[data-selecting] { background-color: #BD6342; }
