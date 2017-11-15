@@ -76,7 +76,7 @@
         <h1 style="text-align: center;">Book some time...</h1>
         <div id="day-schedule"></div>
         <div id="booking-confirmation">
-          <%= render "booking_modal" %> 
+          <%= render "booking_modal", locals: {booking: @booking} %> 
         </div>       
       </div>
     </div>
@@ -86,7 +86,6 @@
 
   <script>
     $( document ).ready(function() {
-      $("#payment-modal").hide()
       (function ($) {
       // iterate through each space booking
         // change color of time block that corresponds to the booking start - end times 

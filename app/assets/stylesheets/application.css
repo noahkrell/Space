@@ -14,7 +14,6 @@
  *= require raty/jquery.raty.css
  *= require font-awesome/css/font-awesome
  *= require magnific-popup/magnific-popup
- *= require simple_calendar
  *= require_tree .
  *= require_self
  */

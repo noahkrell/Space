@@ -63,6 +63,10 @@
   border: 2px solid black;
 }
 
+#booking-confirmation {
+  text-align: center;
+}
+
 
 .schedule-rows td[data-selected],
 .schedule-rows td[data-selecting] { background-color: #BD6342; }
