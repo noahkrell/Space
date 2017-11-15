@@ -19,6 +19,13 @@ $( document ).ready(function() {
       return new Date(d.setDate(diff));
     }
 
+    // insert word "today" on correct day in rendered calendar
+    var date = new Date()
+    var sunday = getSunday(new Date());
+    var diff = date.getDate() - sunday.getDate()
+    $(".schedule-header th")[diff + 1].innerText = $(".schedule-header th")[4].innerText + " (today)"   
+    $(".schedule-header th")[4].style.fontSize = "12.5px"
+
     // write string function to replace value at a given index
     // use this for the incrementHour function below
     String.prototype.replaceAt=function(index, replacement) {
@@ -58,6 +65,11 @@ $( document ).ready(function() {
     //   setTimeout(function(){ $("#confirmation-spinner").hide() }, 2000);
     // }
 
+    function appendWordToday() {
+      var diff = date.getDate() - sunday.getDate()
+      $(".schedule-header th")[diff + 1].innerText = $(".schedule-header th")[4].innerText + " (today)"
+    }
+
 
     // function to pass booking data to controller to save to the db
     $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
@@ -68,14 +80,14 @@ $( document ).ready(function() {
       var date = new Date();
       date.setDate(sunday.getDate() + selected.data().day)
       weekday = date.toDateString()
-
+      
+  
       $.ajax({
         url: window.location.pathname + "/book",
         type: "POST",
         data: { booking: {day: day, date: weekday, start_time: start_time, end_time: end_time} },
         dataType: 'json'
       }).done(function(resp) {
-        // debugger
         var start = new Date(resp.booking.start_time);
         var end = new Date(resp.booking.end_time)
         var timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)

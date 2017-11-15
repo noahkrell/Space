@@ -53,7 +53,6 @@ $(document).ready(function() {
     var form = $(this)
     var input = form.serialize()
     console.log(input)
-    debugger
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
