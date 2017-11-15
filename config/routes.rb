@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   namespace :host do
     resources :spaces, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  post '/spaces/filter', to: 'spaces#filter'
   post '/spaces/:id/review', to: 'space_ratings#create'
   post '/spaces', to: 'spaces#index'
   post 'spaces/:id/book', to: "bookings#create"

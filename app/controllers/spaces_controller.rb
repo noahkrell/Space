@@ -1,14 +1,31 @@
 class SpacesController < ApplicationController
 
+  before_action :set_search
+
+  def set_search
+    @search = Space.search(params[:q])
+  end
+
   def index
-    # binding.pry
-    if params[:search].empty?
-      @spaces = Space.all
-      @map_markers = Space.near("Austin, TX")
-    else
-      @spaces = Space.search_by_address(params[:search])
-      @map_markers = Space.search_by_address(params[:search])
-    end
+    @search_term = params[:search]
+      if params[:search].empty?
+        @spaces = Space.all
+        @map_markers = Space.near("Austin, TX")
+      else
+        @spaces = Space.search_by_address(params[:search])
+        if @spaces.empty?
+          flash[:danger] = "Currently no spaces in that area"
+          redirect_to root_path
+        else
+          @map_markers = Space.search_by_address(params[:search])
+        end
+      end
+  end
+
+  def filter
+    @spaces = @search.result
+    @map_markers = Space.markers_of(@spaces)
+    render :index
   end
 
   def show
