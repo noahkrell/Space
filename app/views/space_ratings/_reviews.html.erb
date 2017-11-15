@@ -1,7 +1,1 @@
-          <article id="<%= rating.id %>">
-            <% booking = Booking.find_by(id: rating.booking_id) %>
-            <% renter = User.find_by(id: booking.renter_id) %>
-            <%= renter.first_name %> <div class="star" data-score="<%= rating.score %>"></div>
-            <%= booking.end_time.strftime("%B %Y") %><br>
-            <%= rating.comment %><br><br>
-          </article>
+
