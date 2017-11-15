@@ -159,7 +159,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -170,7 +170,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -181,7 +181,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -192,7 +192,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -203,7 +203,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -214,7 +214,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -225,7 +225,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 Space.create!(title: Faker::Address.community,
               description: Faker::Lorem.paragraph,
@@ -236,7 +236,7 @@ Space.create!(title: Faker::Address.community,
               state: Faker::Address.state_abbr,
               country: Faker::Address.country,
               owner: user_array.sample)
-end
+
 
 space_array = Space.all
 
