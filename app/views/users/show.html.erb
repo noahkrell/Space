@@ -52,8 +52,8 @@
           </h3>
 
           <p><%= booking.space.location %></p>
-                      <small><%= link_to "Edit", edit_host_space_path(:space => booking.space.id), :class => "btn btn-primary btn-sm"
-            %></small>
+          <%#=binding.pry%>
+          <p><%= booking.start_time.strftime("Booked on %m/%d/%Y at %I:%M%p") %></p>
         </div>
         <% end %>
       <% end %>
