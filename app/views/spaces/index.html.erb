@@ -14,10 +14,10 @@
   <div class="row">
     <% @spaces.each do |space| %>
     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-      <div class="card h-100">
-        <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "card-img-top" %>
+      <div class="card h-100 my-rentals">
+        <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto"  %>
         <div class="card-body space_icon">
-          <h4 class="card-title">
+          <h4 class="card-title text-center">
             <%= link_to space.title, space_path(:id => space.id) %>
           </h4>
           <p class="card-text"><%= space.description %></p>
@@ -26,7 +26,7 @@
     </div>
     <% end %>
 
-<!-- 
+<!--
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
