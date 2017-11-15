@@ -1,0 +1,32 @@
+<div class="main-content container">
+  <% provide(:title, @user) %>
+  <div>
+    <h1><%= @user.first_name + " " + @user.last_name %></h1>
+    <div>
+    <p><%= link_to "Post a space", new_host_space_path %></p>
+      <% if @user.spaces.any? %>
+      <h2> My spaces for rent: </h2>
+        <ul>
+          <% @user.spaces.each do | space | %>
+            <li> <%= link_to space.title, space %></li>
+            <%= image_tag space.space_image.url(:thumb) %>
+            <p><%= link_to "Edit", edit_host_space_path(:space => space.id)
+             %></p>
+          <% end %>
+        </ul>
+    <% end %>
+    </div>
+    <div>
+      <% if @user.bookings.any? %>
+      <h2> My bookings: </h2>
+        <ul>
+          <% @user.bookings.each do | booking | %>
+            <li> <%= link_to booking.space.title, booking.space %></li>
+            <%= image_tag booking.space.space_image.url(:thumb) %>
+          <% end %>
+        </ul>
+    <% end %>
+    <p><%= link_to "Settings", edit_user_path(current_user) %></p>
+    </div>
+  </div>
+</div>
