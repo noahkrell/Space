@@ -42,6 +42,7 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '< 2.0'
 gem "simple_calendar", "~> 2.0"
 gem 'stripe'
+gem 'ransack'
 
 
 # gem 'bootstrap', '~> 4.0.0.beta2.1'

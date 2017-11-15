@@ -9,7 +9,18 @@
     <div class="col-md-8">
       <%= render 'shared/results_map', locals: { markers: @map_markers } %>
     </div>
+  </div><br>
+
+<%= search_form_for @search, url: '/spaces/filter',
+                             html: {method: :post} do |f| %>
+  <div class="field">
+    <%= f.label :price_gteq, "Filter by Price: Min" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price_lteq, "Max" %>
+    <%= f.text_field :price_lteq %>
+  <div class="actions" style="display: inline"><%= f.submit "Apply" %></div>
   </div>
+<% end %>
 
   <div class="row">
     <% @spaces.each do |space| %>
