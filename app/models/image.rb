@@ -4,7 +4,8 @@ class Image < ApplicationRecord
 	thumb: '100x100>',
 	square: '200x200#',
 	medium: '300x300>',
-	large: '600x600>'
+	large: '600x600>',
+	display: '700x400#'
 	}
     validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
