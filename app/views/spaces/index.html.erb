@@ -11,6 +11,17 @@
     </div>
   </div>
 
+<%= search_form_for @search, url: '/spaces/filter',
+                             html: {method: :post} do |f| %>
+  <div class="field">
+    <%= f.label :price_gteq, "Min" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price_lteq, "Max" %>
+    <%= f.text_field :price_lteq %>
+  </div>
+  <div class="actions"><%= f.submit "Apply" %></div>
+<% end %>
+
   <div class="row">
     <% @spaces.each do |space| %>
     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
@@ -26,7 +37,7 @@
     </div>
     <% end %>
 
-<!-- 
+<!--
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">

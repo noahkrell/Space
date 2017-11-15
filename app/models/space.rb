@@ -33,4 +33,8 @@ class Space < ApplicationRecord
     average = top/bottom
     return average
   end
+
+  def self.markers_of(array)
+    array.map{|x| Space.search_by_address(x.full_address)}.flatten
+  end
 end

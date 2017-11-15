@@ -1,32 +1,32 @@
 
 
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row home-search-content">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>Space.</strong>
-            </h1>
-            <!-- <hr> -->
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5", id="home-tagline">Find a workspace near you.</p>
-
-			<div class="featurette">
-			   <div class="featurette-inner text-center">
-					  <%= form_tag(spaces_path, :method => "post", class: "search") do %>
-					  <div class="input-group input-group-lg">
-					    <%= text_field_tag :search, params[:search], placeholder: "Enter a location", class: "form-control"%>
-					    <span class="input-group-btn">
-					    <%= submit_tag "Search", :name => nil, style: "display:inline;", class: "btn btn-danger", id: "home-search-btn" %>
-					    </span>
-					  </div>
-					  <% end %>
-			   </div>
-             </div>
-			</div>
-          </div>
-        </div>
+<header class="masthead text-center text-white d-flex">
+  <div class="container my-auto">
+    <div class="row home-search-content">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase">
+          <strong>Space.</strong>
+        </h1>
+        <!-- <hr> -->
       </div>
-    </header>
-   <%= render "section"%>
+      <div class="col-lg-8 mx-auto">
+        <p class="text-faded mb-5", id="home-tagline">Find a workspace near you.</p>
+
+        <div class="featurette">
+          <div class="featurette-inner text-center">
+           <%= form_tag(spaces_path, :method => "post", class: "search") do %>
+           <div class="input-group input-group-lg">
+             <%= text_field_tag :search, params[:search], placeholder: "Enter a location", class: "form-control"%>
+             <span class="input-group-btn">
+               <%= submit_tag "Search", :name => nil, style: "display:inline;", class: "btn btn-danger", id: "home-search-btn" %>
+             </span>
+           </div>
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</header>
+<%= render "section"%>

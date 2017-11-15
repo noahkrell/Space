@@ -12,8 +12,8 @@
     </div>
     <script>
       function initMap() {
-        <% if @map_markers.empty? %>
-          var center = {lat: request.location.latitude, lng: request.location.longitude} 
+        <% if @map_markers == nil %>
+          var center = {lat: request.location.latitude, lng: request.location.longitude}
         <% else %>
           var center = {lat: <%=@map_markers[0].latitude%>, lng: <%=@map_markers[0].longitude%>};
         <%end%>
@@ -22,7 +22,7 @@
           center: center
         });
 
-        <%@map_markers.each do |marker|%>
+        <% @map_markers.each do |marker|%>
           addMarker({
             coords: {lat: <%=marker.latitude%>, lng: <%=marker.longitude%>},
             content: "<h3><%=marker.title%></h3><br><p><%=marker.description%></p>"
