@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // body {
-//   padding-top: 70px;
+//   padding-bottom: -70px;
 //   // background-color: blue; 
 // }
 
@@ -16,4 +16,11 @@
 .alert { 
     margin-top: 70px;
     margin-bottom: -65px;
+}
+
+
+
+//margin under reviews
+.space-ratings {
+    margin-bottom: 90px;
 }

@@ -30,16 +30,17 @@
         </ul>
       </p>
 
-      <div class="space-ratings">
+      <div class="space-ratings" data-star-half="<%= asset_path('star-half.png') %>" data-star-off="<%= asset_path('star-off.png') %>" data-star-on="<%= asset_path('star-on.png') %>">
+
         <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
-        This space has no reviews.
+        <p id="no-reviews-text">This space has no reviews.</p>
         <% else %>
         <h3><%= @space.space_ratings.count %> Reviews |
           <div class="average-star" data-score="<%= @space.average_rating %>" style="display: inline"></div></h3>
           <% @space.space_ratings.each do |rating| %>
           
-          <%= render partial: "reviews", layout: false, locals: { rating: rating}, :formats => [:html] %>
+          <%= render partial: "space_ratings/reviews", layout: false, locals: { rating: rating}, :formats => [:html] %>
 
           <% end %>
           <% end %>
@@ -48,7 +49,7 @@
       <% if @existing_bookings.empty? %>
       <% elsif @most_recent_booking.space_rating %>
       <% else %>
-        <div class="card">
+        <div class="card review-card">
           <div class="card-body">
             <div class="text-left">
               <div class="new-review-form form-group">

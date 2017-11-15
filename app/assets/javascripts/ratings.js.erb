@@ -1,33 +1,44 @@
 $(document).ready(function() {
 
+  var info = $('.space-ratings').data()
+
+  
   $('.star').raty({
     readOnly: true,
     half: true,
     halfShow: true,
+    starHalf: info.starHalf,
+    starOff: info.starOff,
+    starOn: info.starOn,
     score: $(this).data('score'),
-    path: '/assets'
   });
 
   $('.average-star').raty({
-  readOnly: true,
-  half: true,
-  halfShow: true,
-  score: $(this).data('score'),
-  path: '/assets'
-});
+    readOnly: true,
+    half: true,
+    halfShow: true,
+    starHalf: info.starHalf,
+    starOff: info.starOff,
+    starOn: info.starOn,
+    score: $(this).data('score'),
+  
+  });
 
   $('.user_star').raty({
-  half: true,
-  halfShow: true,
-  score: $(this).data('score'),
-  path: '/assets',
-  click: function(score, evt) {
-    $.ajax({
-      url: '/spaces/',
-      type: 'PATCH',
-      data: { score: score }
-    }).done(function (data){});
-  }
-});
+    half: true,
+    halfShow: true,
+    starHalf: info.starHalf,
+    starOff: info.starOff,
+    starOn: info.starOn,
+    score: $(this).data('score'),
+  
+    click: function(score, evt) {
+      $.ajax({
+        url: '/spaces/',
+        type: 'PATCH',
+        data: { score: score }
+      }).done(function (data){});
+    }
+  });
 
 });
