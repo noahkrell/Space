@@ -23,9 +23,13 @@ class SpaceRatingsController < ApplicationController
     space_rating_hash[:score] = params[:score].to_f if params[:score].to_f > 0
     space_rating_hash[:booking_id] = @booking.id
     @review = SpaceRating.new(space_rating_hash)
-    if @review.save
+    if @review.save && request.xhr?
+      render :partial => "reviews", :layout => false, :locals => { rating: @review}, :formats => [:html]
+    elsif @review.save
       flash[:success] = "Thanks for your review!"
       redirect_to "/spaces/#{@space.id}"
+    else
+      redirect '/posts'
     end
   end
 

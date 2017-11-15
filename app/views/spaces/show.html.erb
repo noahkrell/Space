@@ -29,6 +29,7 @@
           <% end %>
         </ul>
       </p>
+
       <div class="space-ratings">
         <% if @space.space_ratings.count == 0 %>
         <h3>Reviews</h3>
@@ -37,15 +38,12 @@
         <h3><%= @space.space_ratings.count %> Reviews |
           <div class="average-star" data-score="<%= @space.average_rating %>" style="display: inline"></div></h3>
           <% @space.space_ratings.each do |rating| %>
-          <% booking = Booking.find_by(id: rating.booking_id) %>
-          <% renter = User.find_by(id: booking.renter_id) %>
-          <%= renter.first_name %> <div class="star" data-score="<%= rating.score %>"></div>
-          <%= booking.end_time.strftime("%B %Y") %><br>
-          <%= rating.comment %><br><br>
+          
+          <%= render partial: "reviews", layout: false, locals: { rating: rating}, :formats => [:html] %>
+
           <% end %>
           <% end %>
         </div>
-
 
       <% if @existing_bookings.empty? %>
       <% elsif @most_recent_booking.space_rating %>
@@ -54,7 +52,7 @@
           <div class="card-body">
             <div class="text-left">
               <div class="new-review-form form-group">
-                  <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true do |form| %>
+                  <%= form_with scope: :space_ratings, url: "/spaces/#{@space.id}/review", local: true, :class => "review-form" do |form| %>
                   <%= form.hidden_field :space_id, :value => @space.id %>
                   <%= form.label "Review your booking:" %><div class="user_star" data-score=""></div>
                   <div class="form-group md-form">
