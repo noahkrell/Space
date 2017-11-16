@@ -24,3 +24,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  <% if (current_user) && (current_user.id == @space.owner.id) %>
+    $("#payment-modal").on('click', function(e) {
+      e.preventDefault()
+      console.log('hello')
+      location.reload();
+    });
+  <% end %>
+</script>

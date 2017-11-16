@@ -96,7 +96,6 @@ $( document ).ready(function() {
           endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
           totalPrice = getTotalPrice(timeBlocks, resp.space.price)
         $("#day-schedule").hide()
-        document.getElementById("confirmation-spinner").style.display="none";
         $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price ($" + String(resp.space.price) + ") X Hours (" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
         $("#payment-modal").show()
       });
