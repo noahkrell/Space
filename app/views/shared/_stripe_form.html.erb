@@ -5,15 +5,15 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>$<%=@space.price%></span>
-    </label>
+<!--     <label class="amount">
+      <span>$<%#=@space.price%></span>
+    </label> -->
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Space Payment"
-          data-amount=<%=@space.price * 100 %>
+          data-amount=<%=@space.price * 100 * 4 %>
           data-locale="auto">
   </script>
 <% end %>

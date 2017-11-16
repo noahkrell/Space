@@ -75,12 +75,15 @@
 
 
 
-      <div class="col-md-6">
-        <h1 style="text-align: center;">Book some time...</h1>
+      <div class="col-md-6">       
+        <% if (current_user) && (current_user.id == @space.owner.id) %>
+          <p style="font-size: 20px; text-align: center;">As the <strong>owner</strong> of this space, please block off times in which you want your space to appear as booked to users.
+        <% else %>
+          <h1 style="text-align: center;">Book some time...</h1>
+        <% end %><p>   
         <div id="day-schedule"></div>
         <div id="booking-confirmation">
-          <%= render "spinner" %>
-          <%= render "booking_modal", locals: {booking: @booking} %>
+          <%= render "booking_modal"%>
         </div>
       </div>
     </div>
@@ -103,5 +106,14 @@
         $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
         <% end %>
       })($);
+
+      <% if !current_user %> 
+      $(".time-slot").each(function() {
+        $(this).click(false);
+        $(this).on('click', function(e) {
+          alert("Please log in to book a space!")
+        });
+      });
+      <% end %>
     });
   </script>

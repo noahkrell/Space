@@ -36,13 +36,17 @@
       <% if @user.bookings.any? %>
         <div class="row my-rentals">
         <% @user.bookings.each do | booking | %>
-          <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <%= link_to image_tag(booking.space.space_image.url(:square)), space_path(:id => booking.space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
-          <hr>
-          <h3><%= link_to booking.space.title, booking.space %></h3>
-          <p><%= booking.space.location %></p>
-          <p><%= booking.start_time.strftime("Booked on %m/%d/%Y at %I:%M%p") %></p>
-          </div>
+          <% if booking.renter != booking.space.owner %>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+              <%= link_to image_tag(booking.space.space_image.url(:square)), space_path(:id => booking.space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
+              <hr>
+              <h3><%= link_to booking.space.title, booking.space %></h3>
+              <p><%= booking.space.location %></p>
+              <%#=binding.pry%>
+              <p><%= booking.start_time.strftime("Booked on %m/%d/%Y at %I:%M%p") %></p>
+            </div>
+          <%end%>
+        <% end %>
         <% end %>
       <% else %>
         <p>You currently have no bookings.</p>

@@ -1,6 +1,10 @@
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" id="payment-modal" data-toggle="modal" data-target="#paymentModal">
-  Confirm Booking
+  <% if (current_user) && (current_user.id == @space.owner.id) %>
+    Block my space
+  <% else %>
+    Confirm Booking
+  <% end %>
 </button>
 
 <!-- Modal -->
@@ -14,7 +18,7 @@
         </button>
       </div>
       <div class="modal-body confirmation-modal">
-        Confirmation Info and Stripe Button Here
+        Click below to finalize your booking!
         <%= render "shared/stripe_form" %>
       </div>
       <div class="modal-footer">
@@ -24,3 +28,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  <% if (current_user) && (current_user.id == @space.owner.id) %>
+    $("#payment-modal").on('click', function(e) {
+      e.preventDefault()
+      console.log('hello')
+      location.reload();
+    });
+  <% end %>
+</script>

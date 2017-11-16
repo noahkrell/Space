@@ -43,9 +43,7 @@ class SpacesController < ApplicationController
     @bookings = Booking.where(space_id: @space.id)
     if current_user
       @existing_bookings = Booking.where(space_id: @space.id, renter_id: current_user.id)
-      # if !@existing_bookings.empty?
-        @most_recent_booking = @existing_bookings.last
-      # end
+      @most_recent_booking = @existing_bookings.last
     end  
   end
 end
