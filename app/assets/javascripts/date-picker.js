@@ -65,7 +65,7 @@ $( document ).ready(function() {
       if ($(this).data().day < x.getDay()) {
         $(this).click(false);
         $(this).on('click', function(e) {
-          alert("you can't book in the past lol")
+          alert("This booking is no longer available")
         });
       }
       
