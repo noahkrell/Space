@@ -13,8 +13,8 @@ class Space < ApplicationRecord
   validates :title, :description, :price, :rules, :location, :city, :country, presence: true
   validates_attachment_content_type :space_image, :content_type => /\Aimage\/.*\Z/
 
-  # geocoded_by :full_address   # can also be an IP address
-  # after_validation :geocode          # auto-fetch coordinates
+  geocoded_by :full_address   # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
 
 
 
