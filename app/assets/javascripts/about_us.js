@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
   $(".our-photos").mouseover(function(){
-    $(this).css("transform", "rotate(180deg)");
+    $(this).addClass("fa-spin");
     });
     $(".our-photos").mouseout(function(){
-        $(this).css("transform", "none");
+        $(this).removeClass("fa-spin");
     });
 
     $(".social-icon").mouseover(function(){

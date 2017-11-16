@@ -5,37 +5,36 @@
       <div>
         <h1 id="profile-name"><%= @user.first_name + " " + @user.last_name %></h1>
         <div>
-          <p><%= link_to "Post a space", new_host_space_path, :class => "text-white" %></p>
           <p><%= link_to "Settings", edit_user_path(current_user), :class => "text-white" %></p>
         </div>
       </section>
       <section class="bg-white rentals-section" id="about">
         <div class="container">
-          <% if @user.spaces.any? %>
-
           <h2> My spaces for rent </h2>
+          <% if @user.spaces.any? %>
           <div class="row my-rentals">
             <% @user.spaces.each do | space | %>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
+              <div class="col-lg-4 col-sm-6 text-center mb-4">
               <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
               <hr>
-              <h3><%= link_to space.title, space %>
-              </h3>
+              <h3><%= link_to space.title, space %></h3>
               <p><%= space.location %></p>
               <small><%= link_to "Edit", edit_host_space_path(:space => space.id), :class => "btn btn-primary btn-sm"
               %></small>
-            </div>
+              </div>
             <% end %>
-            <% end %>
+          <% else %>
+            <p>You currently have no rentals.</p>            
+          <% end %>
           </div>
         </div>
       </section>
 
   <section class="bg-white rentals-section" id="about">
     <div class="container">
-      <% if @user.bookings.any? %>
       <h2> My bookings </h2>
-      <div class="row my-rentals">
+      <% if @user.bookings.any? %>
+        <div class="row my-rentals">
         <% @user.bookings.each do | booking | %>
           <% if booking.renter != booking.space.owner %>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
@@ -49,6 +48,9 @@
           <%end%>
         <% end %>
         <% end %>
+      <% else %>
+        <p>You currently have no bookings.</p>
+      <% end %>
       </div>
     </div>
   </div>
