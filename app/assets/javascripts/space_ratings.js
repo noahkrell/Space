@@ -4,7 +4,7 @@ function setRatyStars(){
 
   var info = $('.space-ratings').data()
 
-  
+
   $('.star').raty({
     readOnly: true,
     half: true,
@@ -46,7 +46,7 @@ function setRatyStars(){
 
 
 $(document).ready(function() {
-  
+
 
   $(".show-content").on('submit','form.review-form', function(event) {
     event.preventDefault()
