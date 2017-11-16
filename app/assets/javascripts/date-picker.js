@@ -15,7 +15,7 @@ $( document ).ready(function() {
     function getSunday(d) {
       d = new Date(d);
       var day = d.getDay(),
-          diff = d.getDate() - day;
+      diff = d.getDate() - day;
       return new Date(d.setDate(diff));
     }
 
@@ -29,7 +29,7 @@ $( document ).ready(function() {
     // write string function to replace value at a given index
     // use this for the incrementHour function below
     String.prototype.replaceAt=function(index, replacement) {
-    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+      return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
     }
 
     // increments the hour by one hour 
@@ -68,7 +68,7 @@ $( document ).ready(function() {
           alert("you can't book in the past lol")
         });
       }
-        
+      
     });
 
 
@@ -82,7 +82,7 @@ $( document ).ready(function() {
       date.setDate(sunday.getDate() + selected.data().day)
       weekday = date.toDateString()
       
-  
+      
       $.ajax({
         url: window.location.pathname + "/book",
         type: "POST",
@@ -90,11 +90,11 @@ $( document ).ready(function() {
         dataType: 'json'
       }).done(function(resp) {
         var start = new Date(resp.booking.start_time);
-            end = new Date(resp.booking.end_time)
-            timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)
-            startString = start.toLocaleDateString() + " @ " + String(start.getHours()) + ":00";
-            endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
-            totalPrice = getTotalPrice(timeBlocks, resp.space.price)
+          end = new Date(resp.booking.end_time)
+          timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)
+          startString = start.toLocaleDateString() + " @ " + String(start.getHours()) + ":00";
+          endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
+          totalPrice = getTotalPrice(timeBlocks, resp.space.price)
         $("#day-schedule").hide()
         document.getElementById("confirmation-spinner").style.display="none";
         $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price ($" + String(resp.space.price) + ") X Hours (" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
