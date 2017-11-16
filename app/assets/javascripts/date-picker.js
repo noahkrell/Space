@@ -23,8 +23,8 @@ $( document ).ready(function() {
     var date = new Date()
     var sunday = getSunday(new Date());
     var diff = date.getDate() - sunday.getDate()
-    $(".schedule-header th")[diff + 1].innerText = $(".schedule-header th")[4].innerText + " (today)"   
-    $(".schedule-header th")[4].style.fontSize = "12.5px"
+    $(".schedule-header th")[diff + 1].innerText = $(".schedule-header th")[diff + 1].innerText + " (today)"   
+    $(".schedule-header th")[diff + 1].style.fontSize = "12.5px"
 
     // write string function to replace value at a given index
     // use this for the incrementHour function below
