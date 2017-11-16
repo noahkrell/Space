@@ -11,18 +11,26 @@
     </div>
   </div><br>
 
-<%= search_form_for @search, url: '/spaces/filter',
-                             html: {method: :post} do |f| %>
-  <div class="field">
-    <%= f.label :location_cont, "Filter by Location:" %>
-    <%= f.text_field :location_cont, value: session[:current_search] %>
-    <%= f.label :price_gteq, "and Price: Min" %>
-    <%= f.text_field :price_gteq %>
-    <%= f.label :price_lteq, "Max" %>
-    <%= f.text_field :price_lteq %>
-  <div class="actions" style="display: inline"><%= f.submit "Apply" %></div>
+  <%= search_form_for @search, url: '/spaces/filter',
+  html: {method: :post, :class => "form-inline"} do |f| %>
+  <div class="field form-row align-items-center">
+    <div class="col-auto">
+      <%= f.label :location_cont, "Filter by Location:" %>
+      <%= f.text_field :location_cont, value: session[:current_search], :class => "form-control" %>
+    </div>
+    <div class="col-auto">
+      <%= f.label :price_gteq, "and Price: Min" %>
+      <%= f.text_field :price_gteq, :class => "form-control" %>
+    </div>
+    <div class="col-auto">
+      <%= f.label :price_lteq, "Max" %>
+      <%= f.text_field :price_lteq, :class => "form-control" %>
+    </div>
+    <div class="col-auto">
+    <%= f.submit "Apply", :class => "btn btn-primary inline-button" %>
+    </div>
   </div>
-<% end %>
+  <% end %>
 
   <div class="row">
     <% @spaces.each do |space| %>
