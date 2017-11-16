@@ -92,8 +92,8 @@ $( document ).ready(function() {
         var start = new Date(resp.booking.start_time);
           end = new Date(resp.booking.end_time)
           timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)
-          startString = start.toLocaleDateString() + " @ " + String(start.getHours()) + ":00";
-          endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
+          startString = start.toLocaleDateString() + " @ " + String(start.getHours()+6) + ":00";
+          endString = end.toLocaleDateString() + " @ " + String(end.getHours()+6) + ":00";
           totalPrice = getTotalPrice(timeBlocks, resp.space.price)
         $("#day-schedule").hide()
         $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price ($" + String(resp.space.price) + ") X Hours (" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
