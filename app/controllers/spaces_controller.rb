@@ -8,7 +8,9 @@ class SpacesController < ApplicationController
       if params[:search]
         session[:current_search] = params[:search]
       else
-        session[:current_search] = params[:q][:location_cont]
+        if params[:q]
+          session[:current_search] = params[:q][:location_cont]
+        end
       end
     end
   end
@@ -39,10 +41,11 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @bookings = Booking.where(space_id: @space.id)
-    @existing_bookings = Booking.where(space_id: @space.id, renter_id: current_user.id)
-    if !@existing_bookings.empty?
-      @most_recent_booking = @existing_bookings.last
-    end
+    if current_user
+      @existing_bookings = Booking.where(space_id: @space.id, renter_id: current_user.id)
+      # if !@existing_bookings.empty?
+        @most_recent_booking = @existing_bookings.last
+      # end
+    end  
   end
-
 end

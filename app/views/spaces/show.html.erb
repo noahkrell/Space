@@ -50,9 +50,7 @@
           <% end %>
         </div>
 
-      <% if @existing_bookings.empty? %>
-      <% elsif @most_recent_booking.space_rating %>
-      <% else %>
+      <% if (@most_recent_booking) && (@most_recent_booking.space_rating == nil) %>
         <div class="card review-card">
           <div class="card-body">
             <div class="text-left">
