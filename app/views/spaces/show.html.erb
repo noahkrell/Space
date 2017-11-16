@@ -102,5 +102,14 @@
         $("#day-schedule").data('artsy.dayScheduleSelector').deserialize(booking);
         <% end %>
       })($);
+
+      <% if !current_user %> 
+      $(".time-slot").each(function() {
+        $(this).click(false);
+        $(this).on('click', function(e) {
+          alert("Please log in to book a space!")
+        });
+      });
+      <% end %>
     });
   </script>
