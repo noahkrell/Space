@@ -43,7 +43,7 @@
   height: 30px;
   margin: 3px;
   padding: 5px;
-  background-color: #3498DB;
+  background-color: #dee1e1;
   cursor: pointer;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -73,6 +73,6 @@
 
 
 .schedule-rows td[data-selected],
-.schedule-rows td[data-selecting] { background-color: #BD6342; }
+.schedule-rows td[data-selecting] { background-color: #8d9090e8; }
 
 .schedule-rows td[data-disabled] { opacity: 0.55; }

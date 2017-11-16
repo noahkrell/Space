@@ -79,7 +79,7 @@
         <% if (current_user) && (current_user.id == @space.owner.id) %>
           <p style="font-size: 20px; text-align: center;">As the <strong>owner</strong> of this space, please block off times in which you want your space to appear as booked to users.
         <% else %>
-          <h1 style="text-align: center;">Book some time...</h1>
+          <h2 style="text-align: center;">Select a time to book:</h2>
         <% end %><p>   
         <div id="day-schedule"></div>
         <div id="booking-confirmation">
