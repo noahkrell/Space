@@ -10,18 +10,6 @@
 end
 user_array = User.all
 
-Space.create!(title: "DevBootcamp Campus",
-              description: "Previously used as a web development school, this space provides everything you need to get your work done. Full connectivity to multiple TV's and a projector, wifi enabled, a mirage of desk space, chairs, white boards, computers, with a fully functional kitchen and yoga studio.",
-              price: 50,
-              rules: "Camping rules apply, please take out whatever trash you may bring in.",
-              location: "1705 Guadalupe St, Austin, TX 78701",
-              city: "Austin",
-              state: "TX",
-              country: "USA",
-              owner: user_array.sample,
-              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/001/original/pexels-photo-271724.jpeg")
-
-
 Space.create!(title: "Comfy Private Office",
               description: "We have an extra office in our new house and we'd love to share it! As web developers, we know that working from home can be distracting and unproductive, so come get away from the distractions and enjoy a private office with everything you need. You are welcome to use our kitchen and bathrooms as well.",
               price: 15,
@@ -109,7 +97,7 @@ Space.create!(title: "Owens Garage",
               owner: user_array.sample,
               space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/008/original/desk-office-computer-work.jpg")
 
-Space.create!(title: "Blue Sky Cafe",
+Space.create!(title: "Sky Blue Cafe",
               description: "We are a popular east Nashville cafe and restaurant (you might have seen us on the show 'Nashville') and we're opening our space up to include workspaces for rent. Probably better for solo workers, expect a cafe style vibe, but with extra amenities including free coffee, free printing, and after hours availability.",
               price: 10,
               rules: "Please be considerate of others with your noise. Printing is free for the first 30 pages. After that we can talk about pricing. Well-behaved pets allowed, but please no children.",
@@ -263,51 +251,6 @@ SpaceRating.create!(booking: booking_array.sample,
 SpaceRating.create!(booking: booking_array.sample,
                       comment: "It was perfect! I got so much done just getting out of my house for the day, like waaaay more than I would have if I had stayed home. Loved everything about it!",
                       score: 5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 1.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 2.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 1)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 1.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 2)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 2.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 3)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 3.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 4)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 4.5)
-
-# SpaceRating.create!(booking: booking_array.sample,
-#                       comment: ,
-#                       score: 5)
-
 
 amenities = ["Wifi", "Coffee", "Restroom", "Seating", "Outlets", "Fridge", "Parking", "Tables", "Outdoor Space"]
 amenities.each do |amenity|
