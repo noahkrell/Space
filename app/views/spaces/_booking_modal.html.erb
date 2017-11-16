@@ -1,6 +1,10 @@
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" id="payment-modal" data-toggle="modal" data-target="#paymentModal">
-  Confirm Booking
+  <% if (current_user) && (current_user.id == @space.owner.id) %>
+    Block my space
+  <% else %>
+    Confirm Booking
+  <% end %>
 </button>
 
 <!-- Modal -->
