@@ -84,7 +84,8 @@ Space.create!(title: "Bar Backroom",
               city: "Carrboro",
               state: "NC",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/024/original/pexels-photo-245219.jpeg")
 
 Space.create!(title: "Owens Garage",
               description: "This space is set up for group working. It includes TV's, extra monitors, two projectors, and any adapters you may need. GoogleFiber is available as well as a fully-stocked coffee bar and La Croix in the fridge.",
@@ -105,7 +106,8 @@ Space.create!(title: "Sky Blue Cafe",
               city: "Nashville",
               state: "TN",
               country: "USA",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/030/original/pexels-photo-271753.jpeg")
 
 Space.create!(title: "Historic South Austin Space",
               description: "Are you the type of person that thrives around old books, typewriters, and drafty (we like to say 'breezy') spaces? Yes? Then this is the space for you. Original wrought-iron railings, hardwood floors, and the smell of memories in the air, this space will put you in the mood to create.",
@@ -137,7 +139,7 @@ Space.create!(title: "Beach Office",
               city: "Tulum",
               country: "Mexico",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/029/original/pexels-photo-271614.jpeg")
 
 Space.create!(title: "Cute Bungalow",
               description: "We are a young couple with some extra space and would love to welcome you into our office when it's not in use! Make yourself at home, the kitchen is available for use, as well as the bathroom and the patio. Internet is reliable and feel free to park in the driveway!",
@@ -148,7 +150,7 @@ Space.create!(title: "Cute Bungalow",
               state: "TN",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/032/original/pexels-photo-358572.jpeg")
 
 
 Space.create!(title: "Downtown Condo",
@@ -160,7 +162,7 @@ Space.create!(title: "Downtown Condo",
               state: "TN",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/021/original/pexels-photo-164437.jpeg")
 
 
 Space.create!(title: "Spacious Studio",
@@ -172,7 +174,7 @@ Space.create!(title: "Spacious Studio",
               state: "NC",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/027/original/pexels-photo-276651.jpeg")
 
 
 Space.create!(title: "Suburban Space",
@@ -184,7 +186,7 @@ Space.create!(title: "Suburban Space",
               state: "NC",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/026/original/pexels-photo-265097.jpeg")
 
 
 Space.create!(title: "Cozy Cabin",
@@ -196,7 +198,7 @@ Space.create!(title: "Cozy Cabin",
               state: "NC",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/028/original/pexels-photo-276720.jpeg")
 
 
 Space.create!(title: "Multiple Rooms",
@@ -208,7 +210,7 @@ Space.create!(title: "Multiple Rooms",
               state: "NC",
               country: "USA",
               owner: user_array.sample,
-              space_image: )
+              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/025/original/pexels-photo-260689.jpeg")
 space_array = Space.all
 
 
