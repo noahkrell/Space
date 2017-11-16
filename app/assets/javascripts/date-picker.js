@@ -15,14 +15,21 @@ $( document ).ready(function() {
     function getSunday(d) {
       d = new Date(d);
       var day = d.getDay(),
-          diff = d.getDate() - day;
+      diff = d.getDate() - day;
       return new Date(d.setDate(diff));
     }
+
+    // insert word "today" on correct day in rendered calendar
+    var date = new Date()
+    var sunday = getSunday(new Date());
+    var diff = date.getDate() - sunday.getDate()
+    $(".schedule-header th")[diff + 1].innerText = $(".schedule-header th")[4].innerText + " (today)"   
+    $(".schedule-header th")[4].style.fontSize = "12.5px"
 
     // write string function to replace value at a given index
     // use this for the incrementHour function below
     String.prototype.replaceAt=function(index, replacement) {
-    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+      return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
     }
 
     // increments the hour by one hour 
@@ -53,10 +60,16 @@ $( document ).ready(function() {
       return (timeBlocks * hourlyPrice)
     }
 
-    // function showSpinner() {
-    //   document.getElementById("confirmation-spinner").style.display="block";
-    //   setTimeout(function(){ $("#confirmation-spinner").hide() }, 2000);
-    // }
+    $(".time-slot").each(function() {
+      var x = new Date()
+      if ($(this).data().day < x.getDay()) {
+        $(this).click(false);
+        $(this).on('click', function(e) {
+          alert("you can't book in the past lol")
+        });
+      }
+      
+    });
 
 
     // function to pass booking data to controller to save to the db
@@ -68,25 +81,23 @@ $( document ).ready(function() {
       var date = new Date();
       date.setDate(sunday.getDate() + selected.data().day)
       weekday = date.toDateString()
-
+      
+      
       $.ajax({
         url: window.location.pathname + "/book",
         type: "POST",
         data: { booking: {day: day, date: weekday, start_time: start_time, end_time: end_time} },
         dataType: 'json'
       }).done(function(resp) {
-        // debugger
         var start = new Date(resp.booking.start_time);
-        var end = new Date(resp.booking.end_time)
-        var timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)
-        var startString = start.toLocaleDateString() + " @ " + String(start.getHours()) + ":00";
-        var endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
-        var totalPrice = getTotalPrice(timeBlocks, resp.space.price)
+          end = new Date(resp.booking.end_time)
+          timeBlocks = getTimeBlocks(resp.booking.start_time, resp.booking.end_time)
+          startString = start.toLocaleDateString() + " @ " + String(start.getHours()) + ":00";
+          endString = end.toLocaleDateString() + " @ " + String(end.getHours()) + ":00";
+          totalPrice = getTotalPrice(timeBlocks, resp.space.price)
         $("#day-schedule").hide()
-        // showSpinner()
         document.getElementById("confirmation-spinner").style.display="none";
         $("#booking-confirmation").show().prepend("<strong>Starts:</strong> " + startString + "<br>" + "<strong>Ends:</strong> " + endString + "<br>" + "Hourly Price ($" + String(resp.space.price) + ") X Hours (" + String(timeBlocks) + ") = $" + String(totalPrice) + "<br>");
-        // $(".stripe_form").hide()
         $("#payment-modal").show()
       });
 
