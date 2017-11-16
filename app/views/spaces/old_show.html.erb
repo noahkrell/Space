@@ -1,11 +1,10 @@
-  <section class="bg-primary space-show-section" id="about">
-    <div class="container">
+<div class="main-content container">
   <div class="row space-img-container">
     <div class="col-md-6 space-img-bucket">
       <!-- <img class="show-banner-img" src="https://images.pexels.com/photos/271762/pexels-photo-271762.jpeg?w=470&h=325&dpr=2&auto=compress&cs=tinysrgb" alt="space image"> -->
       <%= image_tag @space.space_image.url(:large), :class=>"show-banner-img" %>
     </div>
-        <div class="col-md-6" id="show-map-container">
+    <div class="col-md-6" id="show-map-container">
       <iframe id="map-show"
       width="100%"
       height="100%"
@@ -13,19 +12,17 @@
       src="https://www.google.com/maps/embed/v1/place?key=<%=$map_key%>&q=<%=@space.location%>"allowfullscreen>
     </iframe>
   </div>
-        </div>
-      </section>
-      <section class="bg-white rentals-section" id="about">
-        <div class="container">
+</div>
+
 <div class="show-content">
   <div class="row">
     <div class="col-md-6">
       <h2> <%= @space.title %> </h2>
-      <!-- <p><strong>Location: </strong><%#= @space.location %></p> -->
-      <p><strong>Description:</strong> <%= @space.description %></p>
-      <p> <strong>Price:</strong> $<%= @space.price %>/hr</p>
-      <p><strong>Rules: </strong><%= @space.rules %></p>
-      <p><strong>Amenities:</strong>
+      <p>Location: <%= @space.location %></p>
+      <p>Description: <%= @space.description %></p>
+      <p> Price: $<%= @space.price %>/hr</p>
+      <p>Rules: <%= @space.rules %></p>
+      <p>Amenities:
         <ul>
           <% @space.amenities.each do |amenity| %>
           <li><%= amenity.name %></li>
@@ -36,7 +33,6 @@
       <div class="space-ratings" data-star-half="<%= asset_path('star-half.png') %>" data-star-off="<%= asset_path('star-off.png') %>" data-star-on="<%= asset_path('star-on.png') %>">
 
         <% if @space.space_ratings.count == 0 %>
-        <hr class="long-line">
         <h3>Reviews</h3>
         <p id="no-reviews-text">This space has no reviews.</p>
         <% else %>
@@ -68,13 +64,11 @@
                   </div>
                   <% end %>
               </div>
-              <hr>
             </div>
           </div>
         </div>
       <% end %>
       </div>
-
 
 
       <div class="col-md-6">
@@ -87,8 +81,7 @@
       </div>
     </div>
   </div>
-</div>
-</section>
+
 
 
 <%#= render "shared/stripe_form", locals: {space: @space} %>

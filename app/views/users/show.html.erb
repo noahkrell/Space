@@ -1,45 +1,38 @@
 <!-- <div class="main-content container"> -->
-              <section class="bg-primary rentals-section" id="about">
-      <div class="container">
-  <% provide(:title, @user) %>
-  <div>
-    <h1 id="profile-name"><%= @user.first_name + " " + @user.last_name %></h1>
-    <div>
-      <p><%= link_to "Post a space", new_host_space_path, :class => "text-white" %></p>
-      <p><%= link_to "Settings", edit_user_path(current_user), :class => "text-white" %></p>
-  </div>
-</section>
-      <section class="bg-white rentals-section" id="about">
-      <div class="container">
-      <% if @user.spaces.any? %>
-
-      <h2> My spaces for rent </h2>
-      <div class="row my-rentals">
-        <% @user.spaces.each do | space | %>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
-          <hr>
-          <h3><%= link_to space.title, space %>
-
-          </h3>
-
-          <p><%= space.location %></p>
-                      <small><%= link_to "Edit", edit_host_space_path(:space => space.id), :class => "btn btn-primary btn-sm"
-            %></small>
+  <section class="bg-primary rentals-section" id="about">
+    <div class="container">
+      <% provide(:title, @user) %>
+      <div>
+        <h1 id="profile-name"><%= @user.first_name + " " + @user.last_name %></h1>
+        <div>
+          <p><%= link_to "Post a space", new_host_space_path, :class => "text-white" %></p>
+          <p><%= link_to "Settings", edit_user_path(current_user), :class => "text-white" %></p>
         </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
+      </section>
+      <section class="bg-white rentals-section" id="about">
+        <div class="container">
+          <% if @user.spaces.any? %>
 
+          <h2> My spaces for rent </h2>
+          <div class="row my-rentals">
+            <% @user.spaces.each do | space | %>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+              <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
+              <hr>
+              <h3><%= link_to space.title, space %>
+              </h3>
+              <p><%= space.location %></p>
+              <small><%= link_to "Edit", edit_host_space_path(:space => space.id), :class => "btn btn-primary btn-sm"
+              %></small>
+            </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </section>
 
-
-<!--   </div>
-  </section> -->
-    <!-- <div> -->
-            <section class="bg-white rentals-section" id="about">
-      <div class="container">
+  <section class="bg-white rentals-section" id="about">
+    <div class="container">
       <% if @user.bookings.any? %>
       <h2> My bookings </h2>
       <div class="row my-rentals">
@@ -56,9 +49,9 @@
           <p><%= booking.start_time.strftime("Booked on %m/%d/%Y at %I:%M%p") %></p>
         </div>
         <% end %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-  </div>
 </section>

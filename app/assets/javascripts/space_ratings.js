@@ -4,7 +4,7 @@ function setRatyStars(){
 
   var info = $('.space-ratings').data()
 
-  
+
   $('.star').raty({
     readOnly: true,
     half: true,
@@ -46,14 +46,14 @@ function setRatyStars(){
 
 
 $(document).ready(function() {
-  
+
 
   $(".show-content").on('submit','form.review-form', function(event) {
     event.preventDefault()
     var form = $(this)
     var input = form.serialize()
     console.log(input)
-    debugger
+    // debugger
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
