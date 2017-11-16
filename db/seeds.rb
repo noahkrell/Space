@@ -10,18 +10,6 @@
 end
 user_array = User.all
 
-Space.create!(title: "DevBootcamp Campus",
-              description: "Previously used as a web development school, this space provides everything you need to get your work done. Full connectivity to multiple TV's and a projector, wifi enabled, a mirage of desk space, chairs, white boards, computers, with a fully functional kitchen and yoga studio.",
-              price: 50,
-              rules: "Camping rules apply, please take out whatever trash you may bring in.",
-              location: "1705 Guadalupe St, Austin, TX 78701",
-              city: "Austin",
-              state: "TX",
-              country: "USA",
-              owner: user_array.sample,
-              space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/001/original/pexels-photo-271724.jpeg")
-
-
 Space.create!(title: "Comfy Private Office",
               description: "We have an extra office in our new house and we'd love to share it! As web developers, we know that working from home can be distracting and unproductive, so come get away from the distractions and enjoy a private office with everything you need. You are welcome to use our kitchen and bathrooms as well.",
               price: 15,
@@ -109,7 +97,7 @@ Space.create!(title: "Owens Garage",
               owner: user_array.sample,
               space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/008/original/desk-office-computer-work.jpg")
 
-Space.create!(title: "Blue Sky Cafe",
+Space.create!(title: "Sky Blue Cafe",
               description: "We are a popular east Nashville cafe and restaurant (you might have seen us on the show 'Nashville') and we're opening our space up to include workspaces for rent. Probably better for solo workers, expect a cafe style vibe, but with extra amenities including free coffee, free printing, and after hours availability.",
               price: 10,
               rules: "Please be considerate of others with your noise. Printing is free for the first 30 pages. After that we can talk about pricing. Well-behaved pets allowed, but please no children.",
@@ -148,126 +136,129 @@ Space.create!(title: "Beach Office",
               location: "Road Tulum-Boca Paila km7",
               city: "Tulum",
               country: "Mexico",
-              owner: user_array.sample)
+              owner: user_array.sample,
+              space_image: )
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
-
-
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
+Space.create!(title: "Cute Bungalow",
+              description: "We are a young couple with some extra space and would love to welcome you into our office when it's not in use! Make yourself at home, the kitchen is available for use, as well as the bathroom and the patio. Internet is reliable and feel free to park in the driveway!",
+              price: 15,
+              rules: "Please leave the dog in his room, he is friendly, we just don't want him to be bothering you! Other than that, please just clean up after yourself.",
+              location: "923 Mitchell Road, Nashville, TN",
+              city: "Nashville",
+              state: "TN",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
+Space.create!(title: "Downtown Condo",
+              description: "It is rumored that Dolly Parton has a condo a couple floors up, come work in my space and maybe you'll be lucky enough to bump into her! Enjoy all the amenties of the condo building while you are here, including gym, pool, and conference room space. As for my actual office, it has everything you need to plug in and start working.",
+              price: 20,
+              rules: "No loud noises, no children, no smoking.",
+              location: "923 Mitchell Road, Nashville, TN",
+              city: "Nashville",
+              state: "TN",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
+Space.create!(title: "Spacious Studio",
+              description: "I work long hours so I like to offer my space up during the day to those who need a quiet place away from home to get some work done. I keep the place super clean and minimal, bare necessities, just space and quiet. Lots of natural light if that's what you're into.",
+              price: 20,
+              rules: "Lock the door and turn off the air conditioner when you leave.",
+              location: "4210 Bluffs Lane, Durham, NC",
+              city: "Durham",
+              state: "NC",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
+Space.create!(title: "Suburban Space",
+              description: "We just expanded our house to include a huge work-from-home office, but I got a different job so the space is open for use! Comes with a projector, plenty of outlets and adapters, free coffee, and a couple really cute dogs to keep you company. We also have a back patio if you need some fresh air!",
+              price: 15,
+              rules: "Work hard. No groups bigger than 5. No smoking inside or out.",
+              location: "2905 Alderman Lane, Durham, NC",
+              city: "Durham",
+              state: "NC",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
+Space.create!(title: "Cozy Cabin",
+              description: "Want to get some fresh air away from the city noise? Our house is located just outside the city, surrounded by huge trees and a lively forest. No city noise, only birds, deer, squirrels, and you. This is a great place to get some hardcore thinking and working done if you are in a crunch and finding yourself easily distracted.",
+              price: 15,
+              rules: "Please take your trash out when you leave so the critters don't try to get in, and please no smoking in or out.",
+              location: "1610 W. Club Blvd., Durham, NC",
+              city: "Durham",
+              state: "NC",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 
 
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
-
-
-Space.create!(title: Faker::Address.community,
-              description: Faker::Lorem.paragraph,
-              price: Faker::Number.between(10, 100),
-              rules: Faker::Lorem.sentence,
-              location: Faker::Address.street_address,
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              country: Faker::Address.country,
-              owner: user_array.sample)
-
-
+Space.create!(title: "Multiple Rooms",
+              description: "I'm going out of town so I'm opening up my McMansion for you to use! I have 5 open rooms set up with desks and chairs, so this would be perfect for a weekend hack-a-thon or conference type deal. You can not stay overnight, but please come hang during the day!",
+              price: 10,
+              rules: "Work hard, play hard, don't destroy the house.",
+              location: "1019 W Markham Ave., Durham, NC",
+              city: "Durham",
+              state: "NC",
+              country: "USA",
+              owner: user_array.sample,
+              space_image: )
 space_array = Space.all
 
-5.times do
-  Booking.create!(space: space_array.sample,
+
+Booking.create!(space: space_array.sample,
                 renter: user_array.sample,
                 start_time: Faker::Time.between(DateTime.now - 1.minute, DateTime.now, :morning),
                 end_time: Faker::Time.between(DateTime.now - 1.minute, DateTime.now, :afternoon))
 end
 booking_array = Booking.all
 
-5.times do
-  RenterRating.create!(booking: booking_array.sample,
-                      review: Faker::Lorem.paragraph,
-                      stars: [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].sample)
-end
 
-5.times do
-  SpaceRating.create!(booking: booking_array.sample,
-                      comment: Faker::Lorem.paragraph,
-                      score: [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].sample)
-end
+SpaceRating.create!(booking: booking_array.sample,
+                      comment: "This space was okay. It had all of the things I needed technically, but the place was kind of dirty and there was no toilet paper in the bathroom. I probably wouldn't book here again.",
+                      score: 3)
 
+SpaceRating.create!(booking: booking_array.sample,
+                      comment: "Great space, clean, workable, quiet, the owner was very friendly and communicative, but not overbearing.",
+                      score: 4)
 
-amenities = ["Wifi", "Coffee", "Restrooms", "Seating", "Outlets", "Fridge", "Parking", "Tables"]
+SpaceRating.create!(booking: 5,
+                      comment: "I love this space!! In fact, I have plans to book here again for another long overtime weekend. Owner is the best, the amenities are fantastic and the place itself is just super cute and has a great vibe!",
+                      score: 5)
+
+SpaceRating.create!(booking: booking_array.sample,
+                      comment: "I gave 1 star because this was the worst place I've ever booked. It was dirty, it smelled bad, the location was hard to find, and when I got there I couldn't unlock door and had to call the owner (who took an hour) to come let me in and then he blamed me!",
+                      score: 1)
+
+SpaceRating.create!(booking: 5,
+                      comment: "It smelled like a trashcan in there, but I couldn't find any trash anywhere. I won't be staying here again.",
+                      score: 2)
+
+SpaceRating.create!(booking: 5,
+                      comment: "This place was pretty average. Nothing too fancy or upscale about it, but also nothing to really deter me to go again. I'm just not sure if it's worth the price.",
+                      score: 3.5)
+
+SpaceRating.create!(booking: booking_array.sample,
+                      comment: "I really liked this place! I gave 4.5 stars because I'm one of those people that never gives 5 stars because there is always room for improvement!",
+                      score: 4.5)
+
+SpaceRating.create!(booking: booking_array.sample,
+                      comment: "It was perfect! I got so much done just getting out of my house for the day, like waaaay more than I would have if I had stayed home. Loved everything about it!",
+                      score: 5)
+
+amenities = ["Wifi", "Coffee", "Restroom", "Seating", "Outlets", "Fridge", "Parking", "Tables", "Outdoor Space"]
 amenities.each do |amenity|
   Amenity.create(name: amenity)
 end
 amenity_array = Amenity.all
 
-10.times do
+40.times do
   SpaceAmenity.create!(space: space_array.sample,
                       amenity: amenity_array.sample)
 end

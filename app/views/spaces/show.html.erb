@@ -50,6 +50,7 @@
           <% end %>
         </div>
 
+      <% if current_user != @space.owner %>
       <% if (@most_recent_booking) && (@most_recent_booking.space_rating == nil) %>
         <div class="card review-card">
           <div class="card-body">
@@ -71,11 +72,12 @@
           </div>
         </div>
       <% end %>
+      <% end %>
       </div>
 
 
 
-      <div class="col-md-6">       
+      <div class="col-md-6">
         <% if (current_user) && (current_user.id == @space.owner.id) %>
           <p style="font-size: 20px; text-align: center;">As the <strong>owner</strong> of this space, please block off times in which you want your space to appear as booked to users.
         <% else %>
@@ -107,7 +109,7 @@
         <% end %>
       })($);
 
-      <% if !current_user %> 
+      <% if !current_user %>
       $(".time-slot").each(function() {
         $(this).click(false);
         $(this).on('click', function(e) {
