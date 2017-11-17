@@ -213,7 +213,7 @@ Space.create!(title: "Multiple Rooms",
               space_image: "https://s3.us-east-2.amazonaws.com/dbc-space-app/spaces/space_images/000/000/025/original/pexels-photo-260689.jpeg")
 space_array = Space.all
 
-
+10.times do 
 Booking.create!(space: space_array.sample,
                 renter: user_array.sample,
                 start_time: Faker::Time.between(DateTime.now - 1.minute, DateTime.now, :morning),
