@@ -6,7 +6,7 @@
 					<h3 class="white-text"><i class="fa fa-space white-text"></i> Edit your space</h3>
 					<hr>
 				</div>
-				<% provide(:button_text, 'Edit your space') %>
+				<% provide(:button_text, 'Update your space') %>
 				<%= render "form" %>
 				<% if @space.owner == current_user %>
 				<p>Remove your space? <%= link_to "Delete", [:host, @space], method: :delete,

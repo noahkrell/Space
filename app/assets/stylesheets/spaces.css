@@ -76,3 +76,13 @@
 .schedule-rows td[data-selecting] { background-color: #8d9090e8; }
 
 .schedule-rows td[data-disabled] { opacity: 0.55; }
+
+#space-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#profile-space-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 20px;
+  padding-bottom: 15px;
+}

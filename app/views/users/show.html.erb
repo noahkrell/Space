@@ -14,7 +14,7 @@
           <% if @user.spaces.any? %>
           <div class="row my-rentals">
             <% @user.spaces.each do | space | %>
-              <div class="col-lg-4 col-sm-6 text-center mb-4">
+              <div class="col-lg-3 text-center mb-4" id="profile-space-card">
               <%= link_to image_tag(space.space_image.url(:square)), space_path(:id => space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
               <hr>
               <h3><%= link_to space.title, space %></h3>
@@ -37,7 +37,7 @@
         <div class="row my-rentals">
         <% @user.bookings.each do | booking | %>
           <% if booking.renter != booking.space.owner %>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
+            <div class="col-lg-3 text-center mb-4" id="profile-space-card">
               <%= link_to image_tag(booking.space.space_image.url(:square)), space_path(:id => booking.space.id), :class => "rounded-circle img-fluid d-block mx-auto" %>
               <hr>
               <h3><%= link_to booking.space.title, booking.space %></h3>
