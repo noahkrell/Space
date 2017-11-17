@@ -15,15 +15,15 @@
   html: {method: :post, :class => "form-inline"} do |f| %>
   <div class="field form-row align-items-center">
     <div class="col-auto">
-      <%= f.label :location_cont, "Filter by Location:" %>
+      <%= f.label :location_cont, "Location" %>
       <%= f.text_field :location_cont, value: session[:current_search], :class => "form-control" %>
     </div>
     <div class="col-auto">
-      <%= f.label :price_gteq, "and Price: Min" %>
+      <div class="filter-label"><%= f.label :price_gteq, "Min | $" %></div>
       <%= f.text_field :price_gteq, :class => "form-control" %>
     </div>
     <div class="col-auto">
-      <%= f.label :price_lteq, "Max" %>
+      <%= f.label :price_lteq, "Max | $$$$" %>
       <%= f.text_field :price_lteq, :class => "form-control" %>
     </div>
     <div class="col-auto">
