@@ -230,7 +230,7 @@ SpaceRating.create!(booking: booking_array.sample,
                       comment: "Great space, clean, workable, quiet, the owner was very friendly and communicative, but not overbearing.",
                       score: 4)
 
-SpaceRating.create!(booking: 5,
+SpaceRating.create!(booking_id: 5,
                       comment: "I love this space!! In fact, I have plans to book here again for another long overtime weekend. Owner is the best, the amenities are fantastic and the place itself is just super cute and has a great vibe!",
                       score: 5)
 
@@ -238,11 +238,11 @@ SpaceRating.create!(booking: booking_array.sample,
                       comment: "I gave 1 star because this was the worst place I've ever booked. It was dirty, it smelled bad, the location was hard to find, and when I got there I couldn't unlock door and had to call the owner (who took an hour) to come let me in and then he blamed me!",
                       score: 1)
 
-SpaceRating.create!(booking: 5,
+SpaceRating.create!(booking_id: 5,
                       comment: "It smelled like a trashcan in there, but I couldn't find any trash anywhere. I won't be staying here again.",
                       score: 2)
 
-SpaceRating.create!(booking: 5,
+SpaceRating.create!(booking_id: 5,
                       comment: "This place was pretty average. Nothing too fancy or upscale about it, but also nothing to really deter me to go again. I'm just not sure if it's worth the price.",
                       score: 3.5)
 
