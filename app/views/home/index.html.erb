@@ -16,7 +16,7 @@
           <div class="featurette-inner text-center">
            <%= form_tag(spaces_path, :method => "post", class: "search") do %>
            <div class="input-group input-group-lg">
-             <%= text_field_tag :search, params[:search], placeholder: "Enter a location", class: "form-control"%>
+             <%= text_field_tag :search, params[:search], placeholder: "Enter a location (ex. 'Austin')", class: "form-control"%>
              <span class="input-group-btn">
                <%= submit_tag "Search", :name => nil, style: "display:inline;", class: "btn btn-danger", id: "home-search-btn" %>
              </span>
